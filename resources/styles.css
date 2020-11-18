@@ -1,0 +1,271 @@
+#error-section {
+  x: 0;
+  y: 0;
+  width: 100%;
+  height: 100%;
+  display:none;
+}
+
+.error-message-label {
+  text-anchor: middle;
+  fill: red;
+}
+
+#main-section {
+  x: 0;
+  y: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#statusbar {
+  x:0;
+  y:0;
+}
+
+#gps-status {
+  x: 0;
+  y: 36;
+}
+
+#speed {
+  x:0;
+  y:80;
+}
+
+#direction {
+  x:30;
+  y:225;
+}
+
+#params {
+  x: 130;
+  y: 220;
+}
+
+
+.gps-element.__gps-active {
+  fill: #ffffff;
+  stroke-width: 2;
+}
+.gps-element.__gps-too-slow {
+  fill: #555555;
+  stroke-width: 1;
+}
+
+
+.statusbar {
+  width:100%;
+  height:32;
+}
+
+.statusbar__rect {
+  x:0;
+  y:0;
+  width:100%;
+  height:100%;
+  fill: gray;
+}
+
+.statusbar__clock-label {
+ font-size: 22;
+ x: 0;
+ y: 5;
+ text-anchor: middle;
+  fill: #ffffff;
+}
+
+.gps-status {
+  width:100%;
+  height:34;
+}
+
+.gps-status__label {
+  font-size: 22;
+  x:0;
+  y:0;
+  width:100%;
+  text-anchor:middle;
+  fill: #ff0000;
+}
+
+.gps-status__label.__gps-active {
+  fill: #00ff00;
+}
+
+.gps-status__spent-label {
+  font-size: 15;
+  x:0;
+  y: $-14;
+  width:100%;
+  text-anchor:middle;
+  fill: #ffffff;
+}
+
+.gps-status__spent-label.__gps-active {
+  display:none;
+}
+
+.speed {
+  width: 100%;
+  height: 140;
+}
+
+.speed__speed-label {
+  fill: #555555;
+  y:100;
+  x:50%;
+  font-size:128;
+  height:1;
+  text-anchor: middle;
+}
+
+.speed__speed-label.__gps-too-slow {
+  fill: #555555;
+}
+
+.speed__unit-label {
+  fill:"white";
+  font-size:20;
+  width:100%;
+  y:$+3;
+  text-anchor:middle;
+}
+
+.direction {
+  width: 80;
+  height: 80;
+}
+
+.direction__N {
+  x:50%;
+  y:0;
+  font-size: 16;
+  text-anchor: middle;
+  fill: #ffffff;
+}
+.direction__E {
+  x:100%;
+  y:50%+8;
+  font-size: 16;
+  fill: #ffffff;
+}
+.direction__S {
+  x:50%;
+  y:100%+12;
+  font-size: 16;
+  text-anchor: middle;
+  fill: #ffffff;
+}
+.direction__W {
+  x:0;
+  y:50%+8;
+  font-size: 16;
+  text-anchor: end;
+  fill: #ffffff;
+}
+
+.direction__arc {
+ x: 0%;
+ y: 0%;
+ width:100%;
+ height:100%;
+ fill: #ffffff;
+ arc-width:1;
+ start-angle:0;
+ sweep-angle:360;
+}
+
+.direction__arrow1 {
+  x1: 0%;
+  y1: -50%;
+  x2: 30%;
+  y2: -10%;
+  fill: #555555;
+  stroke-width: 1;
+}
+
+.direction__arrow2 {
+  x1: 30%;
+  y1: -10%;
+  x2: 15%;
+  y2: -10%;
+  fill: #555555;
+  stroke-width: 1;
+}
+
+.direction__arrow3 {
+  x1: 15%;
+  y1: -10%;
+  x2: 15%;
+  y2: 44%;
+  fill: #555555;
+  stroke-width: 1;
+}
+
+.direction__arrow4 {
+  x1: 15%;
+  y1: 45%;
+  x2: -15%;
+  y2: 45%;
+  fill: #555555;
+  stroke-width: 1;
+}
+
+.direction__arrow5 {
+  x1: -15%;
+  y1: 44%;
+  x2: -15%;
+  y2: -10%;
+  fill: #555555;
+  stroke-width: 1;
+}
+
+.direction__arrow6 {
+  x1: -15%;
+  y1: -10%;
+  x2: -30%;
+  y2: -10%;
+  fill: #555555;
+  stroke-width: 1;
+}
+
+.direction__arrow7 {
+  x1: -30%;
+  y1: -10%;
+  x2: 0%;
+  y2: -50%;
+  fill: #555555;
+  stroke-width: 1;
+}
+
+
+.params {
+  
+}
+.params__row {
+  x: 0;
+  y: $;
+  height: 24;
+}
+.params__left {
+  x: 0;
+  y: 0;
+  width: 46;
+}
+.params__left-label {
+  width:100%;
+  text-anchor: end;
+  font-size: 20;
+  fill: #ffffff;
+}
+
+.params__right {
+  x: $;
+  y: 0;
+}
+.params__right-label {
+  x: 8;
+  font-size: 20;
+  fill: #555555;
+}
