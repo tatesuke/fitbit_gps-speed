@@ -5,7 +5,8 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "@fitbit/sdk": "~5.0.1",
-    "@fitbit/sdk-cli": "^1.7.3"
+    "@fitbit/sdk-cli": "^1.7.3",
+    "fitbit-sdk-types": "^6.0.1"
   },
   "fitbit": {
     "appUUID": "e01f3d37-2d92-4fb5-a7d6-25f109c082c8",

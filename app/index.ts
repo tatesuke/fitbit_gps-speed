@@ -4,13 +4,12 @@
 import document from 'document';
 import { geolocation  } from "geolocation";
 import { display } from "display";
+import * as messaging from "messaging";
 import clock from "clock";
 import * as util from "../common/utils";
 import { preferences } from "user-settings";
-
 const MIN_SPEED = 5.0;
 
-console.log("App code started");
 
 // init display
 // setInterval(()=>{
@@ -52,17 +51,17 @@ geolocation.watchPosition((p)=>{
   gpsStatusLabel.text="GPS: Available";
   
   const speed = (p.coords.speed * 3.6).toFixed(1);
-  headLabel.text = p.coords.heading;
-  latLabel.text = p.coords.latitude;
-  lonLabel.text = p.coords.longitude;
-  altLabel.text = p.coords.altitude;
+  headLabel.text = p.coords.heading.toString();
+  latLabel.text = p.coords.latitude.toString();
+  lonLabel.text = p.coords.longitude.toString();
+  altLabel.text = p.coords.altitude.toString();
   
-  if (speed < MIN_SPEED) {
-    speedLabel.text = 0;
+  if (parseInt(speed) < MIN_SPEED) {
+    speedLabel.text = '0';
     util.addClassName(gpsElements, "__gps-too-slow");
   } else {
     speedLabel.text = speed;
-    headArrow.groupTransform.rotate.angle = p.coords.heading;
+    (headArrow as any).groupTransform.rotate.angle = p.coords.heading;
     util.removeClassName(gpsElements, "__gps-too-slow");
   }
   util.addClassName(gpsElements, "__gps-active");
@@ -74,3 +73,4 @@ geolocation.watchPosition((p)=>{
   util.removeClassName(gpsElements, "__gps-active");
   util.removeClassName(gpsElements, "__gps-too-slow");
 }, {timeout:5000});
+
