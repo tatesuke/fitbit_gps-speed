@@ -1,3 +1,13 @@
 <svg>
-  <use id="speed-page" href="#speed-page" />
+  <section x="0" y="0" width="100%" height="32">
+   <use href="#clock-panel" id="clock-panel"/>
+  </section>
+  <section x="0" y="$" width="100%" height="100%-32">
+    <use href="#content-panel" id="content-panel">
+      <use href="#speed-panel" id="speed-panel" />
+      <use href="#detail-panel" id="detail-panel" /> 
+    </use>
+  </section>
+  
+  <!-- <use id="setting-panel" href="#setting-page" /> -->
 </svg>

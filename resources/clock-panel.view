@@ -1,0 +1,7 @@
+<svg><defs><symbol id="clock-panel">
+  <section class="clock-panel">
+    <rect class="clock-panel__rect" />
+    <textarea id="clock-panel__clock-label" class="clock-panel__clock-label">14:35</textarea>
+  </section>
+</symbol></defs></svg>
+

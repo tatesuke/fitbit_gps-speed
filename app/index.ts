@@ -3,10 +3,28 @@
  */
 
 import document from 'document';
-import { SpeedPage } from './SpeedPage';
+import { ClockPanel } from './ClockPanel';
+import { DetailPanel } from './DetailPanel';
+import { ContentPanel } from './ContentPanel';
+import { SettingPanel } from './SettingPanel';
+import { SpeedPanel } from './SpeedPanel';
 
-const speedPage = new SpeedPage(document.getElementById("speed-page"));
-speedPage.onClick(()=>{
-  speedPage.hide();
-});
-// const detailPage = new DetailPage(document.getElementById("speed-page"));
+const clockPanel = new ClockPanel(document.getElementById("clock-panel"));
+
+const contentPanel = new ContentPanel(
+  document.getElementById("content-panel"),
+  new SpeedPanel(document.getElementById("speed-panel")),
+  new DetailPanel(document.getElementById("detail-panel"))
+);
+
+// const settingPanel = new SettingPanel(document.getElementById("content-panel"));
+
+// contentPanel.onTripreClick(()=>{
+//   contentPanel.hide();
+//   settingPanel.show();
+// });
+
+// settingPanel.onClose(()=> {
+//   settingPanel.hide();
+//   contentPanel.show();
+// });

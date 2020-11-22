@@ -3,8 +3,21 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="import" href="/mnt/sysassets/system_widget.defs" />
 
-    <!-- ページ定義 -->
-    <link rel="stylesheet" href="speed-page.css" />
-    <link rel="import" href="speed-page.view" />
+    <!-- 部品定義 -->
+    <link rel="stylesheet" href="clock-panel.css" />
+    <link rel="import" href="clock-panel.view" />
+
+    <link rel="stylesheet" href="content-panel.css" />
+    <link rel="import" href="content-panel.view" />
+
+    <link rel="stylesheet" href="speed-panel.css" />
+    <link rel="import" href="speed-panel.view" />
+    
+    <link rel="stylesheet" href="detail-panel.css" />
+    <link rel="import" href="detail-panel.view" />
+
+    <!-- 
+    <link rel="stylesheet" href="setting-page.css" />
+    <link rel="import" href="setting-page.view" /> -->
   </defs>
 </svg>

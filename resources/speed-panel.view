@@ -1,12 +1,5 @@
-<svg><defs><symbol id="speed-page" pointer-events="visible">
+<svg><defs><symbol id="speed-panel">
   <svg id="main-section">
-    <section id="statusbar">
-      <section class="statusbar">
-        <rect class="statusbar__rect" />
-        <textarea id="clock-label" class="statusbar__clock-label">14:35</textarea>
-      </section>
-    </section>
-
     <section id="gps-status">
       <section class="gps-status">
         <textarea id="gps-status-label" class="gps-status__label gps-element">GPS: Conecting...</textarea>

@@ -6,10 +6,10 @@ import { geolocation  } from "geolocation";
 import clock from "clock";
 import * as util from "../common/utils";
 import { preferences } from "user-settings";
-import { Page } from './Page';
+import { Panel } from './Panel';
 const MIN_SPEED = 5.0;
 
-export class SpeedPage extends Page {
+export class SpeedPanel extends Panel {
 
   private clockLabel: Element;
   private gpsStatusLabel: Element;
