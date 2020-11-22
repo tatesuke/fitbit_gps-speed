@@ -2,5 +2,9 @@
   <defs>
     <link rel="stylesheet" href="styles.css" />
     <link rel="import" href="/mnt/sysassets/system_widget.defs" />
+
+    <!-- ページ定義 -->
+    <link rel="stylesheet" href="speed-page.css" />
+    <link rel="import" href="speed-page.view" />
   </defs>
 </svg>
