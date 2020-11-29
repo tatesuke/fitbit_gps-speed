@@ -3,11 +3,11 @@
     <use href="#clock-panel" id="clock-panel"/>
   </section>
   <svg x="0" y="$" width="100%" height="100%-50" overflow="hidden">
-    <rect x="0" y="0" width="100%" height="100%" id="content-panel-rect" pointer-events="visible">
-      <g id="setting-panel-transform">
+    <use href="#scrollview">
+      <use href="#scrollview-item" display="flexible-height">
         <use href="#setting-panel" id="setting-panel" display="flexible-height"/>
-      </g>
-    </rect>
+      </use>
+    </use>
     <!-- <use href="#content-panel" id="content-panel">
       <use href="#speed-panel" id="speed-panel" />
       <use href="#detail-panel" id="detail-panel" /> 

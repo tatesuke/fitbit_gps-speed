@@ -11,30 +11,30 @@ import { SpeedPanel } from "./page/SpeedPanel";
 
 const clockPanel = new ClockPanel(document.getElementById("clock-panel"));
 
-const settingPanel = document.getElementById("setting-panel") as GraphicsElement;
-const settingPanelTransform = document.getElementById("setting-panel-transform") as GroupElement; 
-let isMouseDown = false;
-let previousY;
-const contentPanel = document.getElementById("content-panel-rect") as GraphicsElement;
-contentPanel.addEventListener("mousedown", (e)=>{
-    isMouseDown = true;
-    previousY = e.screenY;
-    console.log("down " + previousY);
-});
-contentPanel.addEventListener("mouseup", ()=>{
-    isMouseDown = false;
-    console.log("up");
-});
-contentPanel.addEventListener("mousemove", (e)=>{
-    if (!isMouseDown) {
-      return;
-    }
-    const diff = e.screenY - previousY;
-    let nextY = Math.min(settingPanelTransform.groupTransform.translate.y + diff, 0);
-    nextY = Math.max(-settingPanel.height + contentPanel.height, nextY);
-    settingPanelTransform.groupTransform.translate.y = nextY;
-    previousY = e.screenY;
-});
+// const settingPanel = document.getElementById("setting-panel") as GraphicsElement;
+// const settingPanelTransform = document.getElementById("setting-panel-transform") as GroupElement; 
+// let isMouseDown = false;
+// let previousY;
+// const contentPanel = document.getElementById("content-panel-rect") as GraphicsElement;
+// contentPanel.addEventListener("mousedown", (e)=>{
+//     isMouseDown = true;
+//     previousY = e.screenY;
+//     console.log("down " + previousY);
+// });
+// contentPanel.addEventListener("mouseup", ()=>{
+//     isMouseDown = false;
+//     console.log("up");
+// });
+// contentPanel.addEventListener("mousemove", (e)=>{
+//     if (!isMouseDown) {
+//       return;
+//     }
+//     const diff = e.screenY - previousY;
+//     let nextY = Math.min(settingPanelTransform.groupTransform.translate.y + diff, 0);
+//     nextY = Math.max(-settingPanel.height + contentPanel.height, nextY);
+//     settingPanelTransform.groupTransform.translate.y = nextY;
+//     previousY = e.screenY;
+// });
 
 const hoge = document
   .getElementById("setting-panel__always-screen-on")
