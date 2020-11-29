@@ -3,6 +3,9 @@
     <link rel="stylesheet" href="../component/input/on-off.css" />
     <link rel="import" href="../component/input/on-off.view" />
 
+    <link rel="stylesheet" href="../component/input/radio.css" />
+    <link rel="import" href="../component/input/radio.view" />
+
     <symbol id="setting-panel">
       <use href="#scrollview" class="id_scrollview">
         <use href="#scrollview-item" display="flexible-height">
@@ -13,19 +16,28 @@
           
           <svg x="0" y="$" display="flexible-height">
             <use href="#on-off" id="setting-panel__always-screen-on">
-              <set href="text" attributeName="text-buffer" to="_setting-label__hoge" />
+              <set href="text" attributeName="text-buffer" to="Always Screen On" />
             </use>
           </svg>
 
           <svg x="0" y="$" display="flexible-height">
             <use href="#on-off">
-              <set href="text" attributeName="text-buffer" to="Use GPS of connected phone" />
+              <set href="text" attributeName="text-buffer" to="Enable phone's assist" />
             </use>
           </svg>
 
           <svg x="0" y="$" display="flexible-height">
-            <use href="#on-off">
-              <set href="text" attributeName="text-buffer" to="hoge" />
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="Unit of speed" />
+            </use>
+            <use href="#radio">
+              <set href="#text" attributeName="text-buffer" to="km/h" />
+            </use>
+            <use href="#radio">
+              <set href="#text" attributeName="text-buffer" to="mph" />
+            </use>
+            <use href="#radio">
+              <set href="#text" attributeName="text-buffer" to="kt" />
             </use>
           </svg>
 
