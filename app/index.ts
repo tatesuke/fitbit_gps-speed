@@ -19,16 +19,29 @@ const contentPanel = document.getElementById("content-panel-rect") as GraphicsEl
 contentPanel.addEventListener("mousedown", (e)=>{
     isMouseDown = true;
     previousY = e.screenY;
+    console.log("down " + previousY);
 });
 contentPanel.addEventListener("mouseup", ()=>{
     isMouseDown = false;
+    console.log("up");
 });
 contentPanel.addEventListener("mousemove", (e)=>{
+    if (!isMouseDown) {
+      return;
+    }
     const diff = e.screenY - previousY;
     let nextY = Math.min(settingPanelTransform.groupTransform.translate.y + diff, 0);
     nextY = Math.max(-settingPanel.height + contentPanel.height, nextY);
     settingPanelTransform.groupTransform.translate.y = nextY;
     previousY = e.screenY;
+});
+
+const hoge = document
+  .getElementById("setting-panel__always-screen-on")
+  .getElementsByClassName("on-off__button")[0] as GraphicsElement;
+console.log(hoge);
+hoge.addEventListener("click", () => {
+  console.log("click");
 });
 
 // const contentPanel = new ContentPanel(

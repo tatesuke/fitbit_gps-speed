@@ -10,7 +10,7 @@
       </svg>
       
       <svg x="0" y="$" display="flexible-height">
-        <use href="#on-off">
+        <use href="#on-off" id="setting-panel__always-screen-on">
           <set href="text" attributeName="text-buffer" to="_setting-label__hoge" />
         </use>
       </svg>
