@@ -3,35 +3,39 @@
     <link rel="stylesheet" href="../component/input/on-off.css" />
     <link rel="import" href="../component/input/on-off.view" />
 
-    <symbol id="setting-panel" display="flexible-height">
-      <svg y="$" height="50" class="setting-section-title">
-        <text class="setting-section-title__text">Setting for slow speed</text>
-        <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
-      </svg>
-      
-      <svg x="0" y="$" display="flexible-height">
-        <use href="#on-off" id="setting-panel__always-screen-on">
-          <set href="text" attributeName="text-buffer" to="_setting-label__hoge" />
-        </use>
-      </svg>
+    <symbol id="setting-panel">
+      <use href="#scrollview" class="id_scrollview">
+        <use href="#scrollview-item" display="flexible-height">
+          <svg y="$" height="50" class="setting-section-title">
+            <text class="setting-section-title__text">Setting for slow speed</text>
+            <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
+          </svg>
+          
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#on-off" id="setting-panel__always-screen-on">
+              <set href="text" attributeName="text-buffer" to="_setting-label__hoge" />
+            </use>
+          </svg>
 
-      <svg x="0" y="$" display="flexible-height">
-        <use href="#on-off">
-          <set href="text" attributeName="text-buffer" to="Use GPS of connected phone" />
-        </use>
-      </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#on-off">
+              <set href="text" attributeName="text-buffer" to="Use GPS of connected phone" />
+            </use>
+          </svg>
 
-      <svg x="0" y="$" display="flexible-height">
-        <use href="#on-off">
-          <set href="text" attributeName="text-buffer" to="hoge" />
-        </use>
-      </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#on-off">
+              <set href="text" attributeName="text-buffer" to="hoge" />
+            </use>
+          </svg>
 
-      <svg x="0" y="$" display="flexible-height">
-        <use href="#on-off">
-          <set href="text" attributeName="text-buffer" to="fuga" />
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#on-off">
+              <set href="text" attributeName="text-buffer" to="fuga" />
+            </use>
+          </svg>
         </use>
-      </svg>
+      </use>
     </symbol>
   </defs>
 </svg>

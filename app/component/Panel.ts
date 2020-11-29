@@ -1,5 +1,4 @@
 export class Panel {
-
   protected elem: Element;
 
   constructor(elem: Element) {
@@ -19,15 +18,15 @@ export class Panel {
     (this.elem as any).y = y; // TODO as anyやめる
   }
 
-  get width():number {
+  get width(): number {
     return (this.elem as any).width;
   }
 
   set width(width: number) {
     (this.elem as any).width = width;
   }
-  
-  get height():number {
+
+  get height(): number {
     return (this.elem as any).height;
   }
 
@@ -61,11 +60,15 @@ export class Panel {
     });
   }
 
+  public onMouseOut(callback: (e: MouseEvent) => any) {
+    this.elem.addEventListener("mouseout", (e) => {
+      callback(e);
+    });
+  }
+
   public onMouseMove(callback: (e: MouseEvent) => any) {
     this.elem.addEventListener("mousemove", (e) => {
       callback(e);
     });
   }
-
-
 }
