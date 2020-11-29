@@ -1,16 +1,14 @@
-import document from 'document';
+import document from "document";
 import clock from "clock";
-import * as util from "../common/utils";
+import * as util from "../../common/utils";
 import { preferences } from "user-settings";
-import { Panel } from './Panel';
+import { Panel } from "./Panel";
 
 export class ClockPanel extends Panel {
-
   constructor(elem: Element) {
     super(elem);
-    
-    const clockLabel = document.getElementById("clock-label");
-    
+
+    const clockLabel = document.getElementById("clock-panel__clock-label");
     clock.granularity = "minutes";
     clock.ontick = (evt) => {
       let today = evt.date;
@@ -24,7 +22,6 @@ export class ClockPanel extends Panel {
       }
       let mins = util.zeroPad(today.getMinutes());
       clockLabel.text = `${hours}:${mins}`;
-    }
+    };
   }
-
 }

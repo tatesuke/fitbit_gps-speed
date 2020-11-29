@@ -1,0 +1,34 @@
+
+.number-pad {
+    x: 0;
+    y: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.number-pad__value-section {
+    x: 0;
+    y: 0;
+    width: 100%;
+    height: 80;
+}
+
+.number-pad__value {
+    font-size: 36;
+    font-weight: bold;
+    x: 100%-70;
+    width: 176; /* 336-70-70 */
+    text-anchor: end;
+    fill: "#ffffff";
+}
+
+.number-pad__number {
+    font-size: 32;
+    fill: #ffffff;
+    x: 50%;
+    text-anchor: middle;
+}
+
+.number-pad__ok-rect {
+    fill: orange;
+}

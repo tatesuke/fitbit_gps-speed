@@ -1,6 +1,6 @@
 .clock-panel {
   width:100%;
-  height:32;
+  height:50;
 }
 
 .clock-panel__rect {
@@ -12,7 +12,7 @@
 }
 
 .clock-panel__clock-label {
- font-size: 22;
+ font-size: 36;
  x: 0;
  y: 5;
  text-anchor: middle;

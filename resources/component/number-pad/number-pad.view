@@ -1,0 +1,59 @@
+<svg><defs><symbol id="number-pad">
+  <svg class="number-pad">
+
+    <section class="number-pad__value-section">
+      <text class="number-pad__value">5.0</text>
+    </section>
+
+    <svg x="0" y="80" width="100%" height="256">
+      <svg x="0" y="0" width="25%" height="33%">
+        <text class="number-pad__number">7</text>
+      </svg>
+      <svg x="25%" y="0" width="25%" height="33%">
+        <text class="number-pad__number">8</text>
+      </svg>
+      <svg x="50%" y="0" width="25%" height="33%">
+        <text class="number-pad__number">9</text>
+      </svg>
+      <svg x="75%" y="0" width="25%" height="33%">
+        <text class="number-pad__number">0</text>
+      </svg>
+
+      <svg x="0" y="33%" width="25%" height="34%">
+        <text class="number-pad__number">4</text>
+      </svg>
+      <svg x="25%" y="33%" width="25%" height="34%">
+        <text class="number-pad__number">5</text>
+      </svg>
+      <svg x="50%" y="33%" width="25%" height="34%">
+        <text class="number-pad__number">6</text>
+      </svg>
+      <svg x="75%" y="33%" width="25%" height="34%">
+        <text class="number-pad__number">.</text>
+      </svg>
+
+      <svg x="0" y="67%" width="25%" height="33%">
+        <text class="number-pad__number">1</text>
+      </svg>
+      <svg x="25%" y="67%" width="25%" height="33%">
+        <text class="number-pad__number">2</text>
+      </svg>
+      <svg x="50%" y="67%" width="25%" height="33%">
+        <text class="number-pad__number">3</text>
+      </svg>
+      <svg x="75%" y="67%" width="25%" height="33%">
+        <rect x="0" y="0" width="100%" height="100%" class="number-pad__ok-rect" />
+        <text class="number-pad__number number-pad__ok">OK</text>
+      </svg>
+
+      <line x1="25%" y1="0" x2="25%" y2="100%" stroke-width="1" fill="#ffffff" />
+      <line x1="50%" y1="0" x2="50%" y2="100%" stroke-width="1" fill="#ffffff" />
+      <line x1="75%" y1="0" x2="75%" y2="100%" stroke-width="1" fill="#ffffff" />
+      
+      <line x1="0" y1="33%" x2="100%" y2="33%" stroke-width="1" fill="#ffffff" />
+      <line x1="0" y1="67%" x2="100%" y2="67%" stroke-width="1" fill="#ffffff" />
+    </svg>
+  </svg>
+</symbol></defs></svg>
+
+
