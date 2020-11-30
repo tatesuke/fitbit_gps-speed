@@ -1,0 +1,38 @@
+.on-off__label_off {
+    y: 50%+10;
+    fill: white;
+}
+.on-off__label_off.is-on {
+    display: none;
+}
+
+.on-off__label_on {
+    y: 50%+10;
+    fill: white;
+    display: none;
+}
+
+.on-off__label_on.is-on {
+    display: inline;
+}
+
+.on-off__circle_off {
+    cx: 22;
+    cy: 50%;
+    r: 13;
+    fill: fb-light-gray;
+}
+.on-off__circle_off.is-on {
+    display:none;
+}
+
+.on-off__circle_on {
+    cx: 100%-22;
+    cy: 50%;
+    r: 13;
+    fill: fb-cyan;
+    display: none;
+}
+.on-off__circle_on.is-on {
+    display: inline;
+}

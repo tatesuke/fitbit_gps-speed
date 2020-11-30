@@ -10,7 +10,7 @@
       <use href="#scrollview" class="id_scrollview">
         <use href="#scrollview-item" display="flexible-height">
           <svg y="$" height="50" class="setting-section-title">
-            <text class="setting-section-title__text">Setting for slow speed</text>
+            <text class="setting-section-title__text">Basic setting</text>
             <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
           </svg>
           
@@ -21,7 +21,7 @@
           </svg>
 
           <svg x="0" y="$" display="flexible-height">
-            <use href="#on-off">
+            <use href="#on-off" id="setting-panel__enable-phones-assist">
               <set href="text" attributeName="text-buffer" to="Enable phone's assist" />
             </use>
           </svg>
@@ -30,20 +30,40 @@
             <use href="#dynamic-textarea" y="0" fill="red">
               <set href="#text" attributeName="text-buffer" to="Unit of speed" />
             </use>
-            <use href="#radio">
+            <use href="#radio" id="setting-panel__kmph-radio">>
               <set href="#text" attributeName="text-buffer" to="km/h" />
             </use>
-            <use href="#radio">
+            <use href="#radio" id="setting-panel__mph-radio">
               <set href="#text" attributeName="text-buffer" to="mph" />
             </use>
-            <use href="#radio">
+            <use href="#radio" id="setting-panel__kt-radio">
               <set href="#text" attributeName="text-buffer" to="kt" />
             </use>
           </svg>
 
+          <svg y="$" height="50" class="setting-section-title">
+            <text class="setting-section-title__text">Setting for slow speed</text>
+            <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
+          </svg>
+
           <svg x="0" y="$" display="flexible-height">
-            <use href="#on-off">
-              <set href="text" attributeName="text-buffer" to="fuga" />
+            <use href="#on-off" id="setting-panel__show-as-speed-0">
+              <set href="text" attributeName="text-buffer" to="Show as speed 0" />
+            </use>
+          </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#on-off" id="setting-panel__grayout-a-speed">
+              <set href="text" attributeName="text-buffer" to="Gray out a speed" />
+            </use>
+          </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#on-off" id="setting-panel__stop-update-an-arrow">
+              <set href="text" attributeName="text-buffer" to="Stop update an arrow" />
+            </use>
+          </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#on-off" id="setting-panel__grayout-an-arrow">
+              <set href="text" attributeName="text-buffer" to="Gray out an arrow" />
             </use>
           </svg>
         </use>

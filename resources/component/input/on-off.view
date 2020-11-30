@@ -1,17 +1,20 @@
 <svg><defs><symbol id="on-off" display="flexible-height">
   <use href="#dynamic-textarea" y="0" fill="red"/>
-  <svg y="$" height="60">
+  <svg y="$" height="60" class="id_click-area">
     <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
-    <text y="50%+10" fill="white">OFF</text>
+    
+    <text class="on-off__label_off indicator" />
+    <text class="on-off__label_on indicator" />
+
     <svg x="100%-74" y="50%-21" width="72" height="42">
       <arc x="1" y="1" width="40" height="40" fill="fb-light-gray" arc-width="2" start-angle="180" sweep-angle="180" />
       <line x1="21" y1="1" x2="100%-21" y2="1" fill="fb-light-gray" stroke-linecap="butt" stroke-width="2"/>
       <line x1="21" y1="100%-2" x2="100%-21" y2="100%-2" fill="fb-light-gray" stroke-linecap="butt" stroke-width="2"/>
       <arc x="100%-41" y="1" width="40" height="40" fill="fb-light-gray" arc-width="2" start-angle="0" sweep-angle="180" />
 
-      <circle cx="22" cy="50%" r="13" fill="fb-light-gray" />
-      <circle cx="100%-22" cy="50%" r="13" fill="fb-cyan" />
+      <circle class="on-off__circle_off indicator" />
+      <circle class="on-off__circle_on indicator" />
     </svg>
-    <rect x="0" y="0" width="100%" height="100%" opacity="0.5" fill="orange" class="on-off__button" pointer-events="visible" />
+    <rect x="0" y="0" width="100%" height="100%" opacity="0" class="on-off__button" pointer-events="visible" />
   </svg>
 </symbol></defs></svg>
