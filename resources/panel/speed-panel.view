@@ -1,71 +1,71 @@
 <svg><defs><symbol id="speed-panel">
-  <svg class="id__main-section" pointer-events="visible">
-    <section id="gps-status">
-      <section class="gps-status">
-        <textarea id="gps-status-label" class="gps-status__label gps-element">GPS: Conecting...</textarea>
-        <textarea id="gps-status-spent-label"class="gps-status__spent-label gps-element" text-length="30">(Last connection: never)</textarea>
+  <svg id="speed-panel__root" class="speed-panel l-root" pointer-events="visible">
+    <section class="speed-panel l-gps-status">
+      <section class="speed-panel gps-status">
+        <textarea id="speed-panel__status-label" class="speed-panel gps-status__status-label gps-element">GPS: Connecting...</textarea>
+        <textarea id="speed-panel__spent-label" class="speed-panel gps-status__spent-label gps-element" text-length="30">(Last connection: never)</textarea>
       </section>
     </section>
 
-    <section id="speed">
-      <section class="speed">
-        <text id="speed-label" class="speed__speed-label gps-element" text-length="5">-</text>
-        <textarea class="speed__unit-label">km/h</textarea>
+    <section class="speed-panel l-speed">
+      <section class="speed-panel speed">
+        <text id="speed-panel__speed__label" class="speed-panel speed__speed-label gps-element" text-length="5">-</text>
+        <textarea class="speed-panel speed__unit-label">km/h</textarea>
       </section>
     </section>
 
-    <section id="direction">
-      <section class="direction">
-        <text class="direction__N">N</text>
-        <text class="direction__W">W</text>
-        <text class="direction__E">E</text>
-        <text class="direction__S">S</text>
-        <arc  class="direction__arc"/>
+    <section class="speed-panel l-direction">
+      <section class="speed-panel direction">
+        <text class="speed-panel direction__N">N</text>
+        <text class="speed-panel direction__W">W</text>
+        <text class="speed-panel direction__E">E</text>
+        <text class="speed-panel direction__S">S</text>
+        <arc  class="speed-panel direction__arc"/>
 
-        <g id="head-arrow" class="direction__arrow gps-element" transform="translate(50%, 50%)">
-          <line class="direction__arrow1 gps-element"/>
-          <line class="direction__arrow2 gps-element"/>
-          <line class="direction__arrow3 gps-element"/>
-          <line class="direction__arrow4 gps-element"/>
-          <line class="direction__arrow5 gps-element"/>
-          <line class="direction__arrow6 gps-element"/>
-          <line class="direction__arrow7 gps-element"/>
+        <g id="head-arrow" transform="translate(50%, 50%)">
+          <line class="speed-panel direction__arrow1 gps-element"/>
+          <line class="speed-panel direction__arrow2 gps-element"/>
+          <line class="speed-panel direction__arrow3 gps-element"/>
+          <line class="speed-panel direction__arrow4 gps-element"/>
+          <line class="speed-panel direction__arrow5 gps-element"/>
+          <line class="speed-panel direction__arrow6 gps-element"/>
+          <line class="speed-panel direction__arrow7 gps-element"/>
         </g>
       </section>
     </section>
 
-    <section id="params">
-      <section class="params">
-        <section class="params__row">
-          <section class="params__left">
-            <textarea class="params__left-label">lat: </textarea>
+    <section class="speed-panel l-params">
+      <section class="speed-panel params">
+        <section class="speed-panel params__row">
+          <section class="speed-panel params__left">
+            <textarea class="speed-panel params__left-label">lat: </textarea>
           </section>
-          <section class="params__right">
-            <textarea id="lat-label" class="params__right-label gps-element" text-length="12">-</textarea>
-          </section>
-        </section>
-        <section class="params__row">
-          <section class="params__left">
-            <textarea class="params__left-label">lon: </textarea>
-          </section>
-          <section class="params__right">
-            <textarea id="lon-label" class="params__right-label gps-element" text-length="12">-</textarea>
+          <section class="speed-panel params__right">
+            <textarea id="lat-label" class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
           </section>
         </section>
-        <section class="params__row">
-          <section class="params__left">
-            <textarea class="params__left-label">alt: </textarea>
+        <section class="speed-panel params__row">
+          <section class="speed-panel params__left">
+            <textarea class="speed-panel params__left-label">lon: </textarea>
           </section>
-          <section class="params__right">
-            <textarea id="alt-label" class="params__right-label gps-element" text-length="12">-</textarea>
+          <section class="speed-panel params__right">
+            <textarea id="lon-label" class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
           </section>
         </section>
-        <section class="params__row">
-          <section class="params__left">
-            <textarea class="params__left-label">head: </textarea>
+        <section class="speed-panel params__row">
+          <section class="speed-panel params__left">
+            <textarea class="speed-panel params__left-label">alt: </textarea>
           </section>
-          <section class="params__right">
-            <textarea id="head-label"class="params__right-label gps-element" text-length="12">-</textarea>
+          <section class="speed-panel params__right">
+            <textarea id="alt-label" class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
+          </section>
+        </section>
+        <section class="speed-panel params__row">
+          <section class="speed-panel params__left">
+            <textarea class="speed-panel params__left-label">head: </textarea>
+          </section>
+          <section class="speed-panel params__right">
+            <textarea id="head-label"class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
           </section>
         </section>
       </section>

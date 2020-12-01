@@ -34,7 +34,7 @@ export class SpeedPanel extends Panel {
   private alt;
 
   constructor(elem: Element) {
-    super(elem.getElementsByClassName("id__main-section")[0]);
+    super(elem.getElementById("speed-panel__root"));
 
     this.setting = settingManager.getSetting();
     settingManager.addChangeListener((s) => {
@@ -49,14 +49,14 @@ export class SpeedPanel extends Panel {
 
   private initElements() {
     const elem = this.elem;
-    this.gpsStatusLabel = elem.getElementById("gps-status-label");
-    this.gpsStatusSpentLabel = elem.getElementById("gps-status-spent-label");
-    this.speedLabel = elem.getElementById("speed-label");
-    this.latLabel = elem.getElementById("lat-label");
-    this.lonLabel = elem.getElementById("lon-label");
-    this.altLabel = elem.getElementById("alt-label");
-    this.headLabel = elem.getElementById("head-label");
-    this.headArrow = elem.getElementById("head-arrow");
+    this.gpsStatusLabel = elem.getElementById("speed-panel__status-label");
+    this.gpsStatusSpentLabel = elem.getElementById("speed-panel__spent-label");
+    this.speedLabel = elem.getElementById("speed-panel__speed__label");
+    this.latLabel = elem.getElementById("speed-panel__lat-label");
+    this.lonLabel = elem.getElementById("speed-panel__lon-label");
+    this.altLabel = elem.getElementById("speed-panel__alt-label");
+    this.headLabel = elem.getElementById("speed-panel__head-label");
+    this.headArrow = elem.getElementById("speed-panel__head-arrow");
     this.gpsElements = elem.getElementsByClassName("gps-element");
   }
 
@@ -99,13 +99,13 @@ export class SpeedPanel extends Panel {
 
     if (this.speed < MIN_SPEED) {
       this.speedLabel.text = "0";
-      util.addClassName(this.gpsElements, "__gps-too-slow");
+      util.addClassName(this.gpsElements, "--gps-too-slow");
     } else {
       (this
         .headArrow as GroupElement).groupTransform.rotate.angle = this.heading;
-      util.removeClassName(this.gpsElements, "__gps-too-slow");
+      util.removeClassName(this.gpsElements, "--gps-too-slow");
     }
-    util.addClassName(this.gpsElements, "__gps-active");
+    util.addClassName(this.gpsElements, "--gps-active");
   }
 
   private updateUiForInactive() {
@@ -115,7 +115,7 @@ export class SpeedPanel extends Panel {
       : "never";
     this.gpsStatusSpentLabel.text = `(Last connection: ${spent})`;
 
-    util.removeClassName(this.gpsElements, "__gps-active");
-    util.removeClassName(this.gpsElements, "__gps-too-slow");
+    util.removeClassName(this.gpsElements, "--gps-active");
+    util.removeClassName(this.gpsElements, "--gps-too-slow");
   }
 }
