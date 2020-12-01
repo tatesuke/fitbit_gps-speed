@@ -47,7 +47,7 @@ class GpsManager {
   }
 
   watchSuccess(p: globalThis.Position): void {
-    const position = { ...p, source: "device" as "phone" };
+    const position = { ...p, source: "device" as "device" };
     this.listeners.forEach((l) => {
       l.successCallback(position);
     });

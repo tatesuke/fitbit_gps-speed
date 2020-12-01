@@ -1,6 +1,3 @@
-/*
- * Entry point for the watch app
- */
 import * as util from "../../common/utils";
 import { Panel } from "../component/Panel";
 import { Setting } from "../../common/setting";
