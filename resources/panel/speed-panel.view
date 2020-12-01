@@ -1,5 +1,5 @@
 <svg><defs><symbol id="speed-panel">
-  <svg id="main-section">
+  <svg class="id__main-section" pointer-events="visible">
     <section id="gps-status">
       <section class="gps-status">
         <textarea id="gps-status-label" class="gps-status__label gps-element">GPS: Conecting...</textarea>
@@ -70,6 +70,7 @@
         </section>
       </section>
     </section>
+    <rect x="0" y="0" width="100%" height="100%" opacity="0" />
   </svg>
 </symbol></defs></svg>
 
