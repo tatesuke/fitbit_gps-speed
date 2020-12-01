@@ -5,73 +5,108 @@ import { preferences } from "user-settings";
 import { Panel } from "../component/Panel";
 import { OnOff } from "../component/input/OnOff";
 import { Radio } from "../component/input/Radio";
-
+import { settingManager } from "../settingManager";
+import { Setting } from "../../common/setting";
 
 export class SettingPanel extends Panel {
+  private alwaysScreenOn: OnOff;
+  private unitOfSpeed: Radio;
+  private eablePhonesAssist: OnOff;
+  private showAsSpeed0: OnOff;
+  private grayoutASpeed: OnOff;
+  private stopUpdateAnArrow: OnOff;
+  private grayoutAnArrow: OnOff;
+
   constructor(elem: Element) {
     super(elem.getElementsByClassName("id_scrollview")[0]);
 
-    const alwaysScreenOn = new OnOff(
+    const setting = settingManager.getSetting();
+    settingManager.addChangeListener((s) => {
+      this.onSettingChange(s);
+    });
+
+    this.alwaysScreenOn = new OnOff(
       elem.getElementById("setting-panel__always-screen-on"),
-      false
+      setting.alwaysScreenOn
     );
-    alwaysScreenOn.onClick(() => {
-      const value = alwaysScreenOn.getValue();
-      alwaysScreenOn.setValue(!value);
+    this.alwaysScreenOn.onClick(() => {
+      settingManager.update({
+        alwaysScreenOn: !settingManager.getSetting().alwaysScreenOn,
+      });
     });
 
-    const eablePhonesAssist = new OnOff(
+    this.eablePhonesAssist = new OnOff(
       elem.getElementById("setting-panel__enable-phones-assist"),
-      false
+      setting.enablePhonesAssist
     );
-    eablePhonesAssist.onClick(() => {
-      const value = eablePhonesAssist.getValue();
-      eablePhonesAssist.setValue(!value);
+    this.eablePhonesAssist.onClick(() => {
+      settingManager.update({
+        enablePhonesAssist: !settingManager.getSetting().enablePhonesAssist,
+      });
     });
 
-    const unitOfSpeed = new Radio([
-      ["km/h", elem.getElementById("setting-panel__kmph-radio")],
-      ["mph", elem.getElementById("setting-panel__mph-radio")],
-      ["kt", elem.getElementById("setting-panel__kt-radio")],
-    ]);
-    unitOfSpeed.onClick((value: string) => {
-      unitOfSpeed.setValue(value);
+    this.unitOfSpeed = new Radio(
+      [
+        ["km/h", elem.getElementById("setting-panel__kmph-radio")],
+        ["mph", elem.getElementById("setting-panel__mph-radio")],
+        ["kt", elem.getElementById("setting-panel__kt-radio")],
+      ],
+      setting.unitOfSpeed
+    );
+    this.unitOfSpeed.onClick((value: string) => {
+      settingManager.update({
+        unitOfSpeed: value,
+      });
     });
 
-    const showAsSpeed0 = new OnOff(
+    this.showAsSpeed0 = new OnOff(
       elem.getElementById("setting-panel__show-as-speed-0"),
-      false
+      setting.showSpeedAsZeo
     );
-    showAsSpeed0.onClick(() => {
-      const value = showAsSpeed0.getValue();
-      showAsSpeed0.setValue(!value);
+    this.showAsSpeed0.onClick(() => {
+      settingManager.update({
+        showSpeedAsZeo: !settingManager.getSetting().showSpeedAsZeo,
+      });
     });
 
-    const grayoutASpeed = new OnOff(
+    this.grayoutASpeed = new OnOff(
       elem.getElementById("setting-panel__grayout-a-speed"),
-      false
+      setting.showSpeedAsGray
     );
-    grayoutASpeed.onClick(() => {
-      const value = grayoutASpeed.getValue();
-      grayoutASpeed.setValue(!value);
+    this.grayoutASpeed.onClick(() => {
+      settingManager.update({
+        showSpeedAsGray: !settingManager.getSetting().showSpeedAsGray,
+      });
     });
 
-    const stopUpdateAnArrow = new OnOff(
+    this.stopUpdateAnArrow = new OnOff(
       elem.getElementById("setting-panel__stop-update-an-arrow"),
-      false
+      setting.stopArrow
     );
-    stopUpdateAnArrow.onClick(() => {
-      const value = stopUpdateAnArrow.getValue();
-      stopUpdateAnArrow.setValue(!value);
+    this.stopUpdateAnArrow.onClick(() => {
+      settingManager.update({
+        stopArrow: !settingManager.getSetting().stopArrow,
+      });
     });
 
-    const grayoutAnArrow = new OnOff(
+    this.grayoutAnArrow = new OnOff(
       elem.getElementById("setting-panel__grayout-an-arrow"),
-      false
+      setting.showArrowAsGray
     );
-    grayoutAnArrow.onClick(() => {
-      const value = grayoutAnArrow.getValue();
-      grayoutAnArrow.setValue(!value);
+    this.grayoutAnArrow.onClick(() => {
+      settingManager.update({
+        showArrowAsGray: !settingManager.getSetting().showArrowAsGray,
+      });
     });
+  }
+
+  private onSettingChange(setting: Setting) {
+    this.alwaysScreenOn.setValue(setting.alwaysScreenOn);
+    this.unitOfSpeed.setValue(setting.unitOfSpeed);
+    this.eablePhonesAssist.setValue(setting.enablePhonesAssist);
+    this.showAsSpeed0.setValue(setting.showSpeedAsZeo);
+    this.grayoutASpeed.setValue(setting.showSpeedAsGray);
+    this.stopUpdateAnArrow.setValue(setting.stopArrow);
+    this.grayoutAnArrow.setValue(setting.showArrowAsGray);
   }
 }
