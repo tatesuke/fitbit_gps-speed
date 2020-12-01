@@ -9,8 +9,8 @@
 
     <section class="speed-panel l-speed">
       <section class="speed-panel speed">
-        <text id="speed-panel__speed__label" class="speed-panel speed__speed-label gps-element" text-length="5">-</text>
-        <textarea class="speed-panel speed__unit-label">km/h</textarea>
+        <text id="speed-panel__speed_-abel" class="speed-panel speed__speed-label gps-element" text-length="5">-</text>
+        <textarea id="speed-panel__speed-unit-label" class="speed-panel speed__unit-label">km/h</textarea>
       </section>
     </section>
 
@@ -22,7 +22,7 @@
         <text class="speed-panel direction__S">S</text>
         <arc  class="speed-panel direction__arc"/>
 
-        <g id="head-arrow" transform="translate(50%, 50%)">
+        <g id="speed-panel__head-arrow" transform="translate(50%, 50%)">
           <line class="speed-panel direction__arrow1 gps-element"/>
           <line class="speed-panel direction__arrow2 gps-element"/>
           <line class="speed-panel direction__arrow3 gps-element"/>
@@ -41,7 +41,7 @@
             <textarea class="speed-panel params__left-label">lat: </textarea>
           </section>
           <section class="speed-panel params__right">
-            <textarea id="lat-label" class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
+            <textarea id="speed-panel__lat-label" class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
           </section>
         </section>
         <section class="speed-panel params__row">
@@ -49,7 +49,7 @@
             <textarea class="speed-panel params__left-label">lon: </textarea>
           </section>
           <section class="speed-panel params__right">
-            <textarea id="lon-label" class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
+            <textarea id="speed-panel__lon-label" class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
           </section>
         </section>
         <section class="speed-panel params__row">
@@ -57,7 +57,7 @@
             <textarea class="speed-panel params__left-label">alt: </textarea>
           </section>
           <section class="speed-panel params__right">
-            <textarea id="alt-label" class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
+            <textarea id="speed-panel__alt-label" class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
           </section>
         </section>
         <section class="speed-panel params__row">
@@ -65,7 +65,7 @@
             <textarea class="speed-panel params__left-label">head: </textarea>
           </section>
           <section class="speed-panel params__right">
-            <textarea id="head-label"class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
+            <textarea id="speed-panel__head-label"class="speed-panel params__right-label gps-element" text-length="12">-</textarea>
           </section>
         </section>
       </section>

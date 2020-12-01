@@ -1,20 +1,18 @@
 /*
  * Entry point for the watch app
  */
-import document from "document";
 import { geolocation } from "geolocation";
-import clock from "clock";
 import * as util from "../../common/utils";
-import { preferences } from "user-settings";
 import { Panel } from "../component/Panel";
 import { Setting } from "../../common/setting";
 import { settingManager } from "../settingManager";
-const MIN_SPEED = 5.0;
+const MIN_SPEED = 0.0;
 
 export class SpeedPanel extends Panel {
   private gpsStatusLabel: Element;
   private gpsStatusSpentLabel: Element;
   private speedLabel: Element;
+  private speedUnitLabel: Element;
   private latLabel: Element;
   private lonLabel: Element;
   private altLabel: Element;
@@ -29,21 +27,22 @@ export class SpeedPanel extends Panel {
   private gpsStatusLabelText: string = "GPS: Connecting...";
   private speed: number = 0;
   private heading: number;
-  private lat;
-  private lon;
-  private alt;
+  private lat: number;
+  private lon: number;
+  private alt: number;
 
   constructor(elem: Element) {
     super(elem.getElementById("speed-panel__root"));
 
+    this.initElements();
+    this.initGps();
+
     this.setting = settingManager.getSetting();
     settingManager.addChangeListener((s) => {
       this.setting = s;
-      this.updateUi;
+      this.updateUi();
     });
 
-    this.initElements();
-    this.initGps();
     this.updateUi();
   }
 
@@ -51,7 +50,8 @@ export class SpeedPanel extends Panel {
     const elem = this.elem;
     this.gpsStatusLabel = elem.getElementById("speed-panel__status-label");
     this.gpsStatusSpentLabel = elem.getElementById("speed-panel__spent-label");
-    this.speedLabel = elem.getElementById("speed-panel__speed__label");
+    this.speedLabel = elem.getElementById("speed-panel__speed-label");
+    this.speedUnitLabel = elem.getElementById("speed-panel__speed-unit-label");
     this.latLabel = elem.getElementById("speed-panel__lat-label");
     this.lonLabel = elem.getElementById("speed-panel__lon-label");
     this.altLabel = elem.getElementById("speed-panel__alt-label");
@@ -65,7 +65,7 @@ export class SpeedPanel extends Panel {
       (p) => {
         this.isGpsActive = true;
         this.lastConnectionTime = new Date();
-        this.gpsStatusLabelText = "GPS: Abiable";
+        this.gpsStatusLabelText = "GPS: Available";
         this.speed = p.coords.speed;
         this.heading = p.coords.heading;
         this.lat = p.coords.latitude;
@@ -75,6 +75,7 @@ export class SpeedPanel extends Panel {
       },
       (e) => {
         this.isGpsActive = false;
+        this.gpsStatusLabelText = "GPS: Lost";
         this.updateUi();
       },
       { timeout: 5000 }
@@ -91,7 +92,11 @@ export class SpeedPanel extends Panel {
 
   private updateUiForActive() {
     this.gpsStatusLabel.text = this.gpsStatusLabelText;
-    this.speedLabel.text = (this.speed * 3.6).toFixed(1);
+    this.speedLabel.text = (this.setting.unitOfSpeed == "mph"
+      ? this.speed * 2.2369
+      : this.speed * 3.6
+    ).toFixed(1);
+    this.speedUnitLabel.text = this.setting.unitOfSpeed;
     this.headLabel.text = this.heading.toString();
     this.latLabel.text = this.lat.toString().slice(0, 10);
     this.lonLabel.text = this.lon.toString().slice(0, 10);
@@ -114,7 +119,8 @@ export class SpeedPanel extends Panel {
       ? util.getSpentString(this.lastConnectionTime)
       : "never";
     this.gpsStatusSpentLabel.text = `(Last connection: ${spent})`;
-
+    this.speedUnitLabel.text = this.setting.unitOfSpeed;
+    
     util.removeClassName(this.gpsElements, "--gps-active");
     util.removeClassName(this.gpsElements, "--gps-too-slow");
   }
