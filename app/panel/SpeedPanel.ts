@@ -1,11 +1,12 @@
 /*
  * Entry point for the watch app
  */
-import { geolocation } from "geolocation";
 import * as util from "../../common/utils";
 import { Panel } from "../component/Panel";
 import { Setting } from "../../common/setting";
 import { settingManager } from "../settingManager";
+import { gpsManager } from "../gpsManager";
+
 const MIN_SPEED = 0.0;
 
 export class SpeedPanel extends Panel {
@@ -35,13 +36,8 @@ export class SpeedPanel extends Panel {
     super(elem.getElementById("speed-panel__root"));
 
     this.initElements();
+    this.initSetting();
     this.initGps();
-
-    this.setting = settingManager.getSetting();
-    settingManager.addChangeListener((s) => {
-      this.setting = s;
-      this.updateUi();
-    });
 
     this.updateUi();
   }
@@ -60,8 +56,16 @@ export class SpeedPanel extends Panel {
     this.gpsElements = elem.getElementsByClassName("gps-element");
   }
 
+  private initSetting() {
+    this.setting = settingManager.getSetting();
+    settingManager.addChangeListener((s) => {
+      this.setting = s;
+      this.updateUi();
+    });
+  }
+
   private initGps() {
-    geolocation.watchPosition(
+    gpsManager.addListener(
       (p) => {
         this.isGpsActive = true;
         this.lastConnectionTime = new Date();
@@ -77,8 +81,7 @@ export class SpeedPanel extends Panel {
         this.isGpsActive = false;
         this.gpsStatusLabelText = "GPS: Lost";
         this.updateUi();
-      },
-      { timeout: 5000 }
+      }
     );
   }
 
@@ -120,7 +123,7 @@ export class SpeedPanel extends Panel {
       : "never";
     this.gpsStatusSpentLabel.text = `(Last connection: ${spent})`;
     this.speedUnitLabel.text = this.setting.unitOfSpeed;
-    
+
     util.removeClassName(this.gpsElements, "--gps-active");
     util.removeClassName(this.gpsElements, "--gps-too-slow");
   }
