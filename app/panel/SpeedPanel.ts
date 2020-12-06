@@ -66,7 +66,7 @@ export class SpeedPanel extends Panel {
       (p) => {
         this.isGpsActive = true;
         this.lastConnectionTime = new Date();
-        this.gpsStatusLabelText = "GPS: Available";
+        this.gpsStatusLabelText = "GPS: " + p.source;
         this.speed = p.coords.speed;
         this.heading = p.coords.heading;
         this.lat = p.coords.latitude;
@@ -92,23 +92,23 @@ export class SpeedPanel extends Panel {
 
   private updateUiForActive() {
     this.gpsStatusLabel.text = this.gpsStatusLabelText;
-    this.speedLabel.text = (this.setting.unitOfSpeed == "mph"
-      ? this.speed * 2.2369
-      : this.speed * 3.6
-    ).toFixed(1);
     this.speedUnitLabel.text = this.setting.unitOfSpeed;
-    this.headLabel.text = this.heading.toString();
+    this.headLabel.text = this.heading ? this.heading.toString() : "-";
     this.latLabel.text = this.lat.toString().slice(0, 10);
     this.lonLabel.text = this.lon.toString().slice(0, 10);
-    this.altLabel.text = this.alt.toString().slice(0, 10);
+    this.altLabel.text = this.alt ? this.alt.toString().slice(0, 10) : "-";
 
-    if (this.speed < MIN_SPEED) {
-      this.speedLabel.text = "0";
-      util.addClassName(this.gpsElements, "--gps-too-slow");
-    } else {
+    if (typeof this.speed === "number" && MIN_SPEED <= this.speed) {
+      this.speedLabel.text = (this.setting.unitOfSpeed == "mph"
+        ? this.speed * 2.2369
+        : this.speed * 3.6
+      ).toFixed(1);
       (this
         .headArrow as GroupElement).groupTransform.rotate.angle = this.heading;
       util.removeClassName(this.gpsElements, "--gps-too-slow");
+    } else {
+      this.speedLabel.text = "0";
+      util.addClassName(this.gpsElements, "--gps-too-slow");
     }
     util.addClassName(this.gpsElements, "--gps-active");
   }
