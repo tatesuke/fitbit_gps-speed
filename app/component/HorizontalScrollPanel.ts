@@ -1,5 +1,6 @@
 import { Panel } from "./Panel";
 
+const SCROLL_START_DISTANCE = 15;
 const WIDTH = 336;
 
 export class HorizontalScrollPanel {
@@ -9,6 +10,7 @@ export class HorizontalScrollPanel {
   private currentPagenumber: number = 0;
 
   private startX: number;
+  private isScrolling: boolean = false;
 
   constructor(gElem: Element, panels: Panel[]) {
     this.gElem = gElem as GroupElement;
@@ -30,6 +32,7 @@ export class HorizontalScrollPanel {
     }
     const diff = this.startX - e.screenX;
     this.startX = null;
+    this.isScrolling = false;
     if (Math.abs(diff) < WIDTH / 2) {
       this.scrollTo(this.currentPagenumber);
     } else if (diff > 0) {
@@ -44,6 +47,12 @@ export class HorizontalScrollPanel {
       return;
     }
     const diff = this.startX - e.screenX;
+    if (!this.isScrolling) {
+      if (Math.abs(diff) < SCROLL_START_DISTANCE) {
+        return;
+      }
+      this.isScrolling = true;
+    }
 
     if (diff > 0 && this.panels.length <= this.currentPagenumber + 1) {
       return;
