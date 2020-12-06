@@ -1,6 +1,4 @@
-import { defaultSetting, Setting } from "../common/setting";
-
-import { geolocation, PositionOptions, PositionError } from "geolocation";
+import { geolocation, PositionError } from "geolocation";
 import { settingManager } from "./SettingManager";
 import * as messaging from "messaging";
 
@@ -15,7 +13,7 @@ interface Coordinates {
 }
 interface Position {
   readonly coords: Coordinates;
-  readonly source: "phone" | "device";
+  readonly source: "Phone" | "Device";
   readonly timestamp: number;
 }
 
@@ -36,6 +34,7 @@ class GpsManager {
   }[] = [];
 
   private sendQueue: any[] = [];
+
   constructor() {
     messaging.peerSocket.addEventListener("open", () => {
       let data;
@@ -43,17 +42,13 @@ class GpsManager {
         messaging.peerSocket.send(data);
       }
     });
-    messaging.peerSocket.addEventListener("message", (e)     =>     {
-      if (e.data.key !== "gps") {
-        return;
-      }
-      if (!e.data || !e.data.action) {
+    messaging.peerSocket.addEventListener("message", (e) => {
+      if (e.data.key !== "gps" || !e.data.action) {
         return;
       }
       if (e.data.action.type === "success") {
         this.watchSuccessPhone(e.data.action.payload);
-      }
-      if (e.data.action.type === "fail") {
+      } else {
         this.watchFailPhone(e.data.action.payload);
       }
     });
@@ -69,7 +64,9 @@ class GpsManager {
     });
     if (this.listeners.length === 1) {
       this.startDeviceGps();
-      this.startPhoneGps();
+      if (settingManager.getSetting().enablePhonesAssist) {
+        this.startPhoneGps();
+      }
     }
   }
 
@@ -89,7 +86,7 @@ class GpsManager {
     }
     this.state = "device";
 
-    const position = { ...p, source: "device" as "device" };
+    const position = { ...p, source: "Device" as "Device" };
     this.listeners.forEach((l) => {
       l.successCallback(position);
     });
@@ -122,19 +119,27 @@ class GpsManager {
   }
 
   watchSuccessPhone(p: globalThis.Position): void {
-    if (this.state !== "initialized" && this.state !== "phone" && this.state !== "lost-phone") {
+    if (
+      this.state !== "initialized" &&
+      this.state !== "phone" &&
+      this.state !== "lost-phone"
+    ) {
       return;
     }
-    console.log(p.coords);
+
     this.state = "phone";
-    const position = { ...p, source: "phone" as "phone"};
+    const position = { ...p, source: "Phone" as "Phone" };
     this.listeners.forEach((l) => {
       l.successCallback(position);
     });
   }
 
   private watchFailPhone(e): void {
-    if (this.state === "initialized" || this.state === "phone" || this.state === "lost-phone") {
+    if (
+      this.state === "initialized" ||
+      this.state === "phone" ||
+      this.state === "lost-phone"
+    ) {
       this.state = "lost-device";
       this.listeners.forEach((l) => {
         l.errorCallback(e);

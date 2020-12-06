@@ -4,6 +4,9 @@ export class OnOff {
   private elem: Element;
   private value: boolean;
 
+  private mouseDownX: number;
+  private mouseDownY: number;
+
   constructor(
     elem: Element,
     initialValue: boolean,
@@ -16,12 +19,22 @@ export class OnOff {
     elem.getElementsByClassName("on-off__label_off")[0].text = offLable;
     elem.getElementsByClassName("on-off__label_on")[0].text = onLabel;
 
+    this.elem.addEventListener("mousedown", (e) => {
+      this.mouseDownX = e.screenX;
+      this.mouseDownY = e.screenY;
+    });
+
     this.updateUi();
   }
 
   onClick(callback: () => void) {
-    this.elem.addEventListener("click", () => {
-      callback();
+    this.elem.addEventListener("click", (e) => {
+        const dx = e.screenX - this.mouseDownX;
+        const dy = e.screenY - this.mouseDownY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance <= 15) {
+          callback();
+        }
     });
   }
 

@@ -5,6 +5,9 @@ export class Radio {
   private value: string;
   private clickCallback?: (value: string) => void;
 
+  private mouseDownX: number;
+  private mouseDownY: number;
+
   constructor(params: [string, Element][], value?: string) {
     this.params = params.map((p) => {
       return {
@@ -14,9 +17,18 @@ export class Radio {
     });
 
     this.params.forEach((p) => {
-      p.elem.addEventListener("click", () => {
+      p.elem.addEventListener("mousedown", (e) => {
+        this.mouseDownX = e.screenX;
+        this.mouseDownY = e.screenY;
+      });
+      p.elem.addEventListener("click", (e) => {
         if (this.clickCallback) {
-          this.clickCallback(p.value);
+          const dx = e.screenX - this.mouseDownX;
+          const dy = e.screenY - this.mouseDownY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance <= 15) {
+            this.clickCallback(p.value);
+          }
         }
       });
     });
