@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="../component/input/radio.css" />
     <link rel="import" href="../component/input/radio.view" />
 
+    <link rel="stylesheet" href="../component/input/label.css" />
+    <link rel="import" href="../component/input/label.view" />
+
     <symbol id="setting-panel">
       <use href="#scrollview" class="id_scrollview">
         <use href="#scrollview-item" display="flexible-height">
@@ -45,7 +48,12 @@
             <text class="setting-section-title__text">Setting for slow speed</text>
             <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
           </svg>
-
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+               <set href="#text" attributeName="text-buffer" to="Minimum speed" />
+            </use>
+            <use href="#label" id="setting-panel__minimum-speed"/>
+          </svg>
           <svg x="0" y="$" display="flexible-height">
             <use href="#on-off" id="setting-panel__show-as-speed-0">
               <set href="text" attributeName="text-buffer" to="Show as speed 0" />

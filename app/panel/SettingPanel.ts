@@ -1,17 +1,16 @@
-import document from "document";
-import clock from "clock";
-import * as util from "../../common/utils";
-import { preferences } from "user-settings";
 import { Panel } from "../component/Panel";
 import { OnOff } from "../component/input/OnOff";
 import { Radio } from "../component/input/Radio";
 import { settingManager } from "../settingManager";
 import { Setting } from "../../common/setting";
+import { NumberPad } from "../component/NumberPad";
+import { Label } from "../component/input/Label";
 
 export class SettingPanel extends Panel {
   private alwaysScreenOn: OnOff;
   private unitOfSpeed: Radio;
   private eablePhonesAssist: OnOff;
+  private minimumSpeed: Label;
   private showAsSpeed0: OnOff;
   private grayoutASpeed: OnOff;
   private stopUpdateAnArrow: OnOff;
@@ -56,6 +55,18 @@ export class SettingPanel extends Panel {
     this.unitOfSpeed.onClick((value: string) => {
       settingManager.update({
         unitOfSpeed: value,
+      });
+    });
+
+    this.minimumSpeed = new Label(
+      elem.getElementById("setting-panel__minimum-speed"),
+      settingManager.getSetting().minimumSpeed
+    );
+    this.minimumSpeed.onClick(() => {
+      new NumberPad().show((value) => {
+        settingManager.update({
+          minimumSpeed: value,
+        });
       });
     });
 
@@ -104,6 +115,7 @@ export class SettingPanel extends Panel {
     this.alwaysScreenOn.setValue(setting.alwaysScreenOn);
     this.unitOfSpeed.setValue(setting.unitOfSpeed);
     this.eablePhonesAssist.setValue(setting.enablePhonesAssist);
+    this.minimumSpeed.setValue(setting.minimumSpeed);
     this.showAsSpeed0.setValue(setting.showSpeedAsZeo);
     this.grayoutASpeed.setValue(setting.showSpeedAsGray);
     this.stopUpdateAnArrow.setValue(setting.stopArrow);

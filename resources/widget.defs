@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="panel/setting-panel.css" />
     <link rel="import" href="panel/setting-panel.view" />
 
-    <!-- 
-    <link rel="stylesheet" href="setting-page.css" />
-    <link rel="import" href="setting-page.view" /> -->
+    <link rel="stylesheet" href="component/number-pad/number-pad.css" />
+    <link rel="import" href="component/number-pad/number-pad.view" />
   </defs>
 </svg>

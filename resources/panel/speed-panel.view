@@ -6,7 +6,7 @@
         <textarea id="speed-panel__spent-label" class="speed-panel gps-status__spent-label gps-element" text-length="30">(Last connection: never)</textarea>
       </section>
     </section>
-
+    
     <section class="speed-panel l-speed">
       <section class="speed-panel speed">]
         <text id="speed-panel__speed-label" class="speed-panel speed__speed-label gps-element" text-length="5">-</text>

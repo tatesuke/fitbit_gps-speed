@@ -4,16 +4,42 @@
     y: 0;
     width: 100%;
     height: 100%;
+    display:none;
 }
 
-.number-pad__value-section {
+.number-pad.--visible {
+    display: inline;
+}
+
+.number-pad__background {
+    x: 0;
+    y: 0;
+    width: 100%;
+    height: 100%;
+    fill: black;
+}
+
+.number-pad__back-section{
+    x: 0;
+    y: 0;
+    width: 100%;
+    height: 50;
+}
+
+.number-pad__back {
+    y: 0;
+    fill: red;
+    text-anchor: middle;
+}
+
+.number-pad__display-section {
     x: 0;
     y: 0;
     width: 100%;
     height: 80;
 }
 
-.number-pad__value {
+.number-pad__display {
     font-size: 36;
     font-weight: bold;
     x: 100%-70;
@@ -29,6 +55,6 @@
     text-anchor: middle;
 }
 
-.number-pad__ok-rect {
+#number-pad__button-ok {
     fill: orange;
 }
