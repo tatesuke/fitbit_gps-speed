@@ -5,6 +5,7 @@ import { settingManager } from "../settingManager";
 import { Setting } from "../../common/setting";
 import { NumberPad } from "../component/NumberPad";
 import { Label } from "../component/input/Label";
+import { display } from 'display';
 
 export class SettingPanel extends Panel {
   private alwaysScreenOn: OnOff;
@@ -15,6 +16,8 @@ export class SettingPanel extends Panel {
   private grayoutASpeed: OnOff;
   private stopUpdateAnArrow: OnOff;
   private grayoutAnArrow: OnOff;
+  private displayOnIntervalId: number | null = null;
+
 
   constructor(elem: Element) {
     super(elem.getElementsByClassName("id_scrollview")[0]);
@@ -109,6 +112,8 @@ export class SettingPanel extends Panel {
         showArrowAsGray: !settingManager.getSetting().showArrowAsGray,
       });
     });
+
+    this.onSettingChange(settingManager.getSetting());
   }
 
   private onSettingChange(setting: Setting) {
@@ -120,5 +125,17 @@ export class SettingPanel extends Panel {
     this.grayoutASpeed.setValue(setting.showSpeedAsGray);
     this.stopUpdateAnArrow.setValue(setting.stopArrow);
     this.grayoutAnArrow.setValue(setting.showArrowAsGray);
+
+    if (setting.alwaysScreenOn) {
+      if (this.displayOnIntervalId === null) {
+        display.poke();
+        this.displayOnIntervalId = setInterval(()=>{display.poke()}, 5000);
+      }
+    } else {
+      if (this.displayOnIntervalId !== null) {
+        clearInterval(this.displayOnIntervalId);
+        this.displayOnIntervalId = null;
+      }
+    }
   }
 }
