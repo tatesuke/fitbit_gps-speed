@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../component/input/label.css" />
     <link rel="import" href="../component/input/label.view" />
 
-    <symbol id="setting-panel">
+    <symbol id="setting-panel" overflow="hidden">
       <use href="#scrollview" class="id_scrollview">
         <use href="#scrollview-item" display="flexible-height">
           <svg y="$" height="50" class="setting-section-title">
