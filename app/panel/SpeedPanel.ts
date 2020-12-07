@@ -11,8 +11,6 @@ export class SpeedPanel extends Panel {
   private gpsStatusSpentLabel: Element;
   private speedLabel: Element;
   private speedUnitLabel: Element;
-  private latLabel: Element;
-  private lonLabel: Element;
   private altLabel: Element;
   private headLabel: Element;
   private headArrow: Element;
@@ -25,8 +23,6 @@ export class SpeedPanel extends Panel {
   private gpsStatusLabelText: string = "GPS: Connecting...";
   private speed: number = 0;
   private heading: number;
-  private lat: number;
-  private lon: number;
   private alt: number;
 
   constructor(elem: Element) {
@@ -45,8 +41,6 @@ export class SpeedPanel extends Panel {
     this.gpsStatusSpentLabel = elem.getElementById("speed-panel__spent-label");
     this.speedLabel = elem.getElementById("speed-panel__speed-label");
     this.speedUnitLabel = elem.getElementById("speed-panel__speed-unit-label");
-    this.latLabel = elem.getElementById("speed-panel__lat-label");
-    this.lonLabel = elem.getElementById("speed-panel__lon-label");
     this.altLabel = elem.getElementById("speed-panel__alt-label");
     this.headLabel = elem.getElementById("speed-panel__head-label");
     this.headArrow = elem.getElementById("speed-panel__head-arrow");
@@ -69,8 +63,6 @@ export class SpeedPanel extends Panel {
         this.gpsStatusLabelText = "GPS: " + p.source;
         this.speed = p.coords.speed;
         this.heading = p.coords.heading;
-        this.lat = p.coords.latitude;
-        this.lon = p.coords.longitude;
         this.alt = p.coords.altitude;
         this.updateUi();
       },
@@ -94,8 +86,6 @@ export class SpeedPanel extends Panel {
     this.gpsStatusLabel.text = this.gpsStatusLabelText;
     this.speedUnitLabel.text = this.setting.unitOfSpeed;
     this.headLabel.text = this.heading ? this.heading.toString() : "-";
-    this.latLabel.text = this.lat.toString().slice(0, 10);
-    this.lonLabel.text = this.lon.toString().slice(0, 10);
     this.altLabel.text = this.alt ? this.alt.toString().slice(0, 10) : "-";
 
     if (typeof this.speed === "number" && MIN_SPEED <= this.speed) {

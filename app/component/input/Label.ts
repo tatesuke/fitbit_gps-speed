@@ -1,5 +1,3 @@
-import * as util from "../../../common/utils";
-
 export class Label {
   private elem: Element;
   private label: Element;
