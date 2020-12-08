@@ -1,7 +1,5 @@
 <svg><defs><symbol id="on-off" display="flexible-height">
-  <use href="#dynamic-textarea" y="0" fill="red"/>
-  <svg y="$" height="60" class="id_click-area">
-    <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
+  <svg height="60" class="id_click-area">
     
     <text class="on-off__label_off indicator" />
     <text class="on-off__label_on indicator" />
@@ -16,5 +14,6 @@
       <circle class="on-off__circle_on indicator" />
     </svg>
     <rect x="0" y="0" width="100%" height="100%" opacity="0" class="on-off__button" pointer-events="visible" />
+    
   </svg>
 </symbol></defs></svg>

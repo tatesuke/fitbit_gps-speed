@@ -12,28 +12,33 @@
     <symbol id="setting-panel" overflow="hidden">
       <use href="#scrollview" class="id_scrollview">
         <use href="#scrollview-item" display="flexible-height">
-          <svg y="$" height="50" class="setting-section-title">
-            <text class="setting-section-title__text">Basic setting</text>
-            <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
+
+          <svg class="setting-panel__title-section">
+            <text class="setting-panel__title-title__text">Basic setting</text>
           </svg>
           
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#on-off" id="setting-panel__always-screen-on">
-              <set href="text" attributeName="text-buffer" to="Always Screen On" />
+          <svg class="setting-panel__section">
+            <line class="setting-section__hr" />
+            <use href="#dynamic-textarea" class="setting-section__section-header">
+              <set href="#text" attributeName="text-buffer" to="Always Screen On" />
             </use>
+            <use href="#on-off" id="setting-panel__always-screen-on" class="setting-section__section-value"/>
           </svg>
 
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#on-off" id="setting-panel__enable-phones-assist">
-              <set href="text" attributeName="text-buffer" to="Enable phone's assist" />
+          <svg class="setting-panel__section">
+            <line class="setting-section__hr" />
+            <use href="#dynamic-textarea" class="setting-section__section-header">
+              <set href="#text" attributeName="text-buffer" to="Enable phone's assist" />
             </use>
+            <use href="#on-off" id="setting-panel__enable-phones-assist" class="setting-section__section-value"/>
           </svg>
 
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
+          <svg class="setting-panel__section">
+            <line class="setting-section__hr" />
+            <use href="#dynamic-textarea" class="setting-section__section-header">
               <set href="#text" attributeName="text-buffer" to="Unit of speed" />
             </use>
-            <use href="#radio" id="setting-panel__kmph-radio">>
+            <use href="#radio" id="setting-panel__kmph-radio">
               <set href="#text" attributeName="text-buffer" to="km/h" />
             </use>
             <use href="#radio" id="setting-panel__mph-radio">
@@ -44,36 +49,47 @@
             </use>
           </svg>
 
-          <svg y="$" height="50" class="setting-section-title">
-            <text class="setting-section-title__text">Setting for slow speed</text>
-            <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
+
+          <svg class="setting-panel__title-section">
+            <text class="setting-panel__title-title__text">Setting for slow speed</text>
           </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-               <set href="#text" attributeName="text-buffer" to="Minimum speed" />
+          <svg class="setting-panel__section">
+            <line class="setting-section__hr" />
+            <use href="#dynamic-textarea" class="setting-section__section-header">
+              <set href="#text" attributeName="text-buffer" to="Minimum speed" />
             </use>
             <use href="#label" id="setting-panel__minimum-speed"/>
           </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#on-off" id="setting-panel__show-as-speed-0">
-              <set href="text" attributeName="text-buffer" to="Show as speed 0" />
+          <svg class="setting-panel__section">
+            <line class="setting-section__hr" />
+            <use href="#dynamic-textarea" class="setting-section__section-header">
+              <set href="#text" attributeName="text-buffer" to="Show as speed 0" />
             </use>
+            <use href="#on-off" id="setting-panel__show-as-speed-0" class="setting-section__section-value" />
           </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#on-off" id="setting-panel__grayout-a-speed">
-              <set href="text" attributeName="text-buffer" to="Gray out a speed" />
+          <svg class="setting-panel__section">
+            <line class="setting-section__hr" />
+            <use href="#dynamic-textarea" class="setting-section__section-header">
+              <set href="#text" attributeName="text-buffer" to="Gray out a speed" />
             </use>
+            <use href="#on-off" id="setting-panel__grayout-a-speed" class="setting-section__section-value" />
           </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#on-off" id="setting-panel__stop-update-an-arrow">
-              <set href="text" attributeName="text-buffer" to="Stop update an arrow" />
+          <svg class="setting-panel__section">
+            <line class="setting-section__hr" />
+            <use href="#dynamic-textarea" class="setting-section__section-header">
+              <set href="#text" attributeName="text-buffer" to="Stop update an arrow" />
             </use>
+            <use href="#on-off" id="setting-panel__stop-update-an-arrow" class="setting-section__section-value" />
           </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#on-off" id="setting-panel__grayout-an-arrow">
-              <set href="text" attributeName="text-buffer" to="Gray out an arrow" />
+          <svg class="setting-panel__section">
+            <line class="setting-section__hr" />
+            <use href="#dynamic-textarea" class="setting-section__section-header">
+              <set href="#text" attributeName="text-buffer" to="Gray out an arrow" />
             </use>
+            <use href="#on-off" id="setting-panel__grayout-an-arrow" class="setting-section__section-value" />
           </svg>
+
+          <section class="setting-panel__section" height="16"/>
         </use>
       </use>
     </symbol>

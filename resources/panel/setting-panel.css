@@ -1,10 +1,37 @@
-.setting-section-title {
+.setting-panel__title-section {
     y: $;
     height: 50;
 }
 
-.setting-section-title__text {
-    fill: cyan;
+.setting-panel__title-title__text {
     x: 50%;
     text-anchor: middle;
+    fill: white;
+    font-size: 34; line-increment: 42;  font-weight: bold; font-step-size: 4; min-font-size: 24;
+}
+
+.setting-panel__section {
+    x:16;
+    width: 100%-36;
+    y:$;
+    display: flexible-height;
+}
+
+.setting-section__hr {
+    x1: -16;
+    y1: 0;
+    x2: 100%+16;
+    y2: 0;
+    fill: white;
+}
+
+.setting-section__section-header {
+    y: $;
+    fill: fb-cyan;
+    font-size: 28; line-increment: 34;  font-weight: bold; font-step-size: 4; min-font-size: 24;
+}
+
+.setting-section__section-value {
+    y: $;
+    x: 0;
 }
