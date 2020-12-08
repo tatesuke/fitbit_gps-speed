@@ -1,3 +1,5 @@
+import { vibration } from "haptics";
+
 export class Label {
   private elem: Element;
   private label: Element;
@@ -27,6 +29,7 @@ export class Label {
       const dy = e.screenY - this.mouseDownY;
       const distance = Math.sqrt(dx * dx + dy * dy);
       if (distance <= 15) {
+        vibration.start("confirmation");
         callback();
       }
     });

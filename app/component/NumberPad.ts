@@ -1,5 +1,6 @@
 import document from "document";
 import * as util from "../../common/utils";
+import { vibration } from "haptics";
 
 const MAX_CHARACTERS = 9;
 
@@ -19,68 +20,81 @@ export class NumberPad {
     this.elem
       .getElementById("number-pad__button-0")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("0");
       });
     this.elem
       .getElementById("number-pad__button-1")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("1");
       });
     this.elem
       .getElementById("number-pad__button-2")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("2");
       });
     this.elem
       .getElementById("number-pad__button-3")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("3");
       });
     this.elem
       .getElementById("number-pad__button-4")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("4");
       });
     this.elem
       .getElementById("number-pad__button-5")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("5");
       });
     this.elem
       .getElementById("number-pad__button-6")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("6");
       });
     this.elem
       .getElementById("number-pad__button-7")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("7");
       });
     this.elem
       .getElementById("number-pad__button-8")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("8");
       });
     this.elem
       .getElementById("number-pad__button-9")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append("9");
       });
     this.elem
       .getElementById("number-pad__button-dot")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         this.append(".");
       });
 
     this.elem
       .getElementById("number-pad__back")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         util.removeClassName(this.elem, "--visible");
       });
 
     this.elem
       .getElementById("number-pad__button-ok")
       .addEventListener("click", () => {
+        vibration.start("confirmation");
         util.removeClassName(this.elem, "--visible");
         const displayString = this.toDisplayString(this.natural, this.decimal);
         this.closeCallback(parseFloat(displayString));

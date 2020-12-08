@@ -1,4 +1,5 @@
 import * as util from "../../../common/utils";
+import { vibration } from "haptics";
 
 export class OnOff {
   private elem: Element;
@@ -33,6 +34,7 @@ export class OnOff {
         const dy = e.screenY - this.mouseDownY;
         const distance = Math.sqrt(dx * dx + dy * dy);
         if (distance <= 15) {
+          vibration.start("confirmation");
           callback();
         }
     });

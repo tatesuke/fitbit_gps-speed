@@ -1,4 +1,5 @@
 import * as util from "../../../common/utils";
+import { vibration } from "haptics";
 
 export class Radio {
   private params: { value: string; elem: Element }[];
@@ -27,6 +28,7 @@ export class Radio {
           const dy = e.screenY - this.mouseDownY;
           const distance = Math.sqrt(dx * dx + dy * dy);
           if (distance <= 15) {
+            vibration.start("confirmation");
             this.clickCallback(p.value);
           }
         }
