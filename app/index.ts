@@ -6,9 +6,9 @@ import document from 'document';
 import { ClockPanel } from "./component/ClockPanel";
 import { HorizontalScrollPanel } from "./component/HorizontalScrollPanel";
 import { Panel } from "./component/Panel";
-import { DetailPanel } from "./page/DetailPanel";
 import { SpeedPanel } from "./panel/SpeedPanel";
 import { SettingPanel } from "./panel/SettingPanel";
+import { DetailPanel } from "./panel/DetailPanel";
 
 const clockPanel = new ClockPanel(document.getElementById("clock-panel"));
 
@@ -16,6 +16,7 @@ const horizontalScrollPanel = new HorizontalScrollPanel(
   document.getElementById("horizontal-scroll-panel"),
   [
     new SpeedPanel(document.getElementById("speed-panel")),
+    new DetailPanel(document.getElementById("detail-panel")),
     new SettingPanel(document.getElementById("setting-panel1")),
   ]
 );

@@ -6,8 +6,8 @@
   <svg x="0" y="$" width="100%" height="100%-50">
     <g id="horizontal-scroll-panel">
       <use x="0" href="#speed-panel" id="speed-panel" />
-      <use x="100%" href="#setting-panel" id="setting-panel1"/>
-      <rect x="200%" width="100%" height="100%" fill="orange" id="setting-panel3"  pointer-events="visible"/>
+      <use x="100%" href="#detail-panel" id="detail-panel"/>
+      <use x="200%" href="#setting-panel" id="setting-panel1"/>
     </g>
   </svg>
 

@@ -1,0 +1,91 @@
+<svg>
+  <defs>
+    <symbol id="detail-panel" overflow="hidden">
+      <use href="#scrollview" class="id_scrollview">
+        <use href="#scrollview-item" display="flexible-height">
+          <svg y="$" height="50" class="setting-section-title">
+            <text class="setting-section-title__text">Parameters</text>
+            <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
+          </svg>
+          
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="status" />
+            </use>
+            <use href="#dynamic-textarea" y="$" fill="red">
+              <set href="#text" attributeName="text-buffer" to="phone" />
+            </use>
+          </svg>
+
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="last update" />
+            </use>
+            <use href="#dynamic-textarea" y="$" fill="red">
+              <set href="#text" attributeName="text-buffer" to="2001/03/21 12:34:33" />
+            </use>
+          </svg>
+
+
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="Lat" />
+            </use>
+            <use href="#dynamic-textarea" y="$" fill="red">
+              <set href="#text" attributeName="text-buffer" to="126.700" />
+            </use>
+          </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="Lon" />
+            </use>
+            <use href="#dynamic-textarea" y="$" fill="red">
+              <set href="#text" attributeName="text-buffer" to="34.700" />
+            </use>
+          </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="Speed(km/h)" />
+            </use>
+            <use href="#dynamic-textarea" y="$" fill="red">
+              <set href="#text" attributeName="text-buffer" to="56.7" />
+            </use>
+          </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="accuracy" />
+            </use>
+            <use href="#dynamic-textarea" y="$" fill="red">
+              <set href="#text" attributeName="text-buffer" to="3" />
+            </use>
+          </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="altitude" />
+            </use>
+            <use href="#dynamic-textarea" y="$" fill="red">
+              <set href="#text" attributeName="text-buffer" to="3" />
+            </use>
+          </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="altitudeAccuracy" />
+            </use>
+            <use href="#dynamic-textarea" y="$" fill="red">
+              <set href="#text" attributeName="text-buffer" to="3" />
+            </use>
+          </svg>
+          <svg x="0" y="$" display="flexible-height">
+            <use href="#dynamic-textarea" y="0" fill="red">
+              <set href="#text" attributeName="text-buffer" to="heading" />
+            </use>
+            <use href="#dynamic-textarea" y="$" fill="red">
+              <set href="#text" attributeName="text-buffer" to="3" />
+            </use>
+          </svg>
+        </use>
+      </use>
+    </symbol>
+  </defs>
+</svg>
+

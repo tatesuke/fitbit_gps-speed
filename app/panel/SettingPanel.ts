@@ -6,6 +6,7 @@ import { Setting } from "../../common/setting";
 import { NumberPad } from "../component/NumberPad";
 import { Label } from "../component/input/Label";
 import { display } from 'display';
+import { vibration } from "haptics";
 
 export class SettingPanel extends Panel {
   private alwaysScreenOn: OnOff;
@@ -32,6 +33,7 @@ export class SettingPanel extends Panel {
       setting.alwaysScreenOn
     );
     this.alwaysScreenOn.onClick(() => {
+      vibration.start("confirmation");
       settingManager.update({
         alwaysScreenOn: !settingManager.getSetting().alwaysScreenOn,
       });

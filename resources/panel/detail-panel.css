@@ -1,0 +1,10 @@
+.setting-section-title {
+    y: $;
+    height: 50;
+}
+
+.setting-section-title__text {
+    fill: cyan;
+    x: 50%;
+    text-anchor: middle;
+}
