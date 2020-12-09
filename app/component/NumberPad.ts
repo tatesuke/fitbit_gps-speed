@@ -13,94 +13,139 @@ export class NumberPad {
 
   private closeCallback: (value: number) => any;
 
+  private listeners: [Element, string, any][] = [];
+
   constructor() {
     this.elem = document.getElementById("number-pad") as GraphicsElement;
     this.display = this.elem.getElementById("number-pad__display");
 
-    this.elem
-      .getElementById("number-pad__button-0")
-      .addEventListener("click", () => {
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-0"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("0");
-      });
-    this.elem
-      .getElementById("number-pad__button-1")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-1"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("1");
-      });
-    this.elem
-      .getElementById("number-pad__button-2")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-2"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("2");
-      });
-    this.elem
-      .getElementById("number-pad__button-3")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-3"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("3");
-      });
-    this.elem
-      .getElementById("number-pad__button-4")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-4"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("4");
-      });
-    this.elem
-      .getElementById("number-pad__button-5")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-5"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("5");
-      });
-    this.elem
-      .getElementById("number-pad__button-6")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-6"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("6");
-      });
-    this.elem
-      .getElementById("number-pad__button-7")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-7"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("7");
-      });
-    this.elem
-      .getElementById("number-pad__button-8")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-8"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("8");
-      });
-    this.elem
-      .getElementById("number-pad__button-9")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-9"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append("9");
-      });
-    this.elem
-      .getElementById("number-pad__button-dot")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-dot"),
+      "click",
+      () => {
         vibration.start("confirmation");
         this.append(".");
-      });
-
-    this.elem
-      .getElementById("number-pad__back")
-      .addEventListener("click", () => {
+      }
+    );
+    this.registerListener(
+      this.elem.getElementById("number-pad__back"),
+      "click",
+      () => {
         vibration.start("confirmation");
+        this.unregisterListeners();
         util.removeClassName(this.elem, "--visible");
-      });
+      }
+    );
 
-    this.elem
-      .getElementById("number-pad__button-ok")
-      .addEventListener("click", () => {
+    this.registerListener(
+      this.elem.getElementById("number-pad__button-ok"),
+      "click",
+      () => {
         vibration.start("confirmation");
+        this.unregisterListeners();
         util.removeClassName(this.elem, "--visible");
         const displayString = this.toDisplayString(this.natural, this.decimal);
         this.closeCallback(parseFloat(displayString));
-      });
+      }
+    );
 
     this.updateUi();
+  }
+
+  private registerListener(elem: Element, eventName: string, listener: any) {
+    elem.addEventListener(eventName as any, listener);
+    this.listeners.push([elem, eventName, listener]);
+    return listener;
+  }
+
+  private unregisterListeners() {
+    this.listeners.forEach((l) => {
+      const elem = l[0];
+      const eventName = l[1];
+      const listener = l[2];
+      elem.removeEventListener(eventName as any, listener);
+    });
+    this.listeners = [];
   }
 
   show(callback: (value: number) => any) {
