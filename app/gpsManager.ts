@@ -144,7 +144,9 @@ class GpsManager {
     ) {
       this.state = "lost-device";
       this.listeners.forEach((l) => {
-        l.errorCallback(e);
+        if (l.errorCallback) {
+          l.errorCallback(e);
+        }
       });
     }
   }
