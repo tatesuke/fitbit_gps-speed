@@ -8,7 +8,6 @@ const MIN_SPEED = 0.0;
 
 export class SpeedPanel extends Panel {
   private gpsStatusLabel: Element;
-  private gpsStatusSpentLabel: Element;
   private speedLabel: Element;
   private speedUnitLabel: Element;
   private altLabel: Element;
@@ -19,7 +18,6 @@ export class SpeedPanel extends Panel {
   private setting: Setting;
 
   private isGpsActive = false;
-  private lastConnectionTime?: Date = undefined;
   private gpsStatusLabelText: string = "GPS: Connecting...";
   private speed: number = 0;
   private heading: number;
@@ -38,7 +36,6 @@ export class SpeedPanel extends Panel {
   private initElements() {
     const elem = this.elem;
     this.gpsStatusLabel = elem.getElementById("speed-panel__status-label");
-    this.gpsStatusSpentLabel = elem.getElementById("speed-panel__spent-label");
     this.speedLabel = elem.getElementById("speed-panel__speed-label");
     this.speedUnitLabel = elem.getElementById("speed-panel__speed-unit-label");
     this.altLabel = elem.getElementById("speed-panel__alt-label");
@@ -59,7 +56,6 @@ export class SpeedPanel extends Panel {
     gpsManager.addListener(
       (p) => {
         this.isGpsActive = true;
-        this.lastConnectionTime = new Date();
         this.gpsStatusLabelText = "GPS: " + p.source;
         this.speed = p.coords.speed;
         this.heading = p.coords.heading;
@@ -105,10 +101,6 @@ export class SpeedPanel extends Panel {
 
   private updateUiForInactive() {
     this.gpsStatusLabel.text = this.gpsStatusLabelText;
-    const spent = this.lastConnectionTime
-      ? util.getSpentString(this.lastConnectionTime)
-      : "never";
-    this.gpsStatusSpentLabel.text = `(Last connection: ${spent})`;
     this.speedUnitLabel.text = this.setting.unitOfSpeed;
 
     util.removeClassName(this.gpsElements, "--gps-active");

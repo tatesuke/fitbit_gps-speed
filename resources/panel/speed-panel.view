@@ -3,7 +3,6 @@
     <section class="speed-panel l-gps-status">
       <section class="speed-panel gps-status">
         <textarea id="speed-panel__status-label" class="speed-panel gps-status__status-label gps-element p2">GPS: Connecting...</textarea>
-        <textarea id="speed-panel__spent-label" class="speed-panel gps-status__spent-label gps-element" text-length="30">(Last connection: never)</textarea>
       </section>
     </section>
     

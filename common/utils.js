@@ -6,12 +6,6 @@ export function zeroPad(i) {
     return i;
   }
   
-export function getSpentString(date) {
-  const now = new Date();
-  const deltaSec = Math.floor((now.getTime() - date.getTime()) / 1000);
-  return deltaSec.toString() + "sec";
-}
-
 export function addClassName(elementOrElements, className) {
   const elements = (elementOrElements.length) ? elementOrElements : [elementOrElements];
   elements.forEach((e) => {

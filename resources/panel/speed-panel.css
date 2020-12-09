@@ -52,19 +52,6 @@
   fill: #00ff00;
 }
 
-.speed-panel.gps-status__spent-label {
-  font-size: 15;
-  x:0;
-  y: $-14;
-  width:100%;
-  text-anchor:middle;
-  fill: #ffffff;
-}
-
-.speed-panel.gps-status__spent-label.--gps-active {
-  display:none;
-}
-
 .speed-panel.speed {
   width: 100%;
   height: 140;
