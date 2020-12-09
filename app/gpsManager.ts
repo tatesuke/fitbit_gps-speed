@@ -11,7 +11,7 @@ interface Coordinates {
   readonly longitude: number;
   readonly speed: number | null;
 }
-interface Position {
+export interface Position {
   readonly coords: Coordinates;
   readonly source: "Phone" | "Device";
   readonly timestamp: number;
@@ -96,7 +96,9 @@ class GpsManager {
     if (this.state === "device" || this.state === "lost-device") {
       this.state = "lost-device";
       this.listeners.forEach((l) => {
-        l.errorCallback(e);
+        if (l.errorCallback) {
+          l.errorCallback(e);
+        }
       });
     }
   }

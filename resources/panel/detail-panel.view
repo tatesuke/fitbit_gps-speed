@@ -3,86 +3,111 @@
     <symbol id="detail-panel" overflow="hidden">
       <use href="#scrollview" class="id_scrollview">
         <use href="#scrollview-item" display="flexible-height">
-          <svg y="$" height="50" class="setting-section-title">
-            <text class="setting-section-title__text">Parameters</text>
-            <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
+          
+          <svg class="detail-panel__title-section">
+            <text class="detail-panel__title-title__text">Parameters</text>
           </svg>
           
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-              <set href="#text" attributeName="text-buffer" to="status" />
+          <svg class="detail-panel__section">
+            <line class="detail-panel__section__hr" />
+            <use href="#dynamic-textarea" class="detail-panel__section-header">
+              <set href="#text" attributeName="text-buffer" to="Source" />
             </use>
-            <use href="#dynamic-textarea" y="$" fill="red">
-              <set href="#text" attributeName="text-buffer" to="phone" />
-            </use>
-          </svg>
-
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-              <set href="#text" attributeName="text-buffer" to="last update" />
-            </use>
-            <use href="#dynamic-textarea" y="$" fill="red">
-              <set href="#text" attributeName="text-buffer" to="2001/03/21 12:34:33" />
+            <use href="#dynamic-textarea" id="detail-panel__source" class="detail-panel__section-value">
+              <set href="#text" attributeName="text-buffer" to="-" />
+              <set href="#text" attributeName="text-length" to="16" />
             </use>
           </svg>
 
+          <svg class="detail-panel__section">
+            <line class="detail-panel__section__hr" />
+            <use href="#dynamic-textarea" class="detail-panel__section-header">
+              <set href="#text" attributeName="text-buffer" to="Last update time" />
+            </use>
+            <use href="#dynamic-textarea" id="detail-panel__last-update-time" class="detail-panel__section-value">
+              <set href="#text" attributeName="text-buffer" to="-" />
+              <set href="#text" attributeName="text-length" to="36" />
+            </use>
+          </svg>
 
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-              <set href="#text" attributeName="text-buffer" to="Lat" />
+          <svg class="detail-panel__section">
+            <line class="detail-panel__section__hr" />
+            <use href="#dynamic-textarea" class="detail-panel__section-header">
+              <set href="#text" attributeName="text-buffer" to="Latitude" />
             </use>
-            <use href="#dynamic-textarea" y="$" fill="red">
-              <set href="#text" attributeName="text-buffer" to="126.700" />
-            </use>
-          </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-              <set href="#text" attributeName="text-buffer" to="Lon" />
-            </use>
-            <use href="#dynamic-textarea" y="$" fill="red">
-              <set href="#text" attributeName="text-buffer" to="34.700" />
+            <use href="#dynamic-textarea" id="detail-panel__latitude" class="detail-panel__section-value">
+              <set href="#text" attributeName="text-buffer" to="-" />
+              <set href="#text" attributeName="text-length" to="16" />
             </use>
           </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-              <set href="#text" attributeName="text-buffer" to="Speed(km/h)" />
+
+          <svg class="detail-panel__section">
+            <line class="detail-panel__section__hr" />
+            <use href="#dynamic-textarea" class="detail-panel__section-header">
+              <set href="#text" attributeName="text-buffer" to="Longitude" />
             </use>
-            <use href="#dynamic-textarea" y="$" fill="red">
-              <set href="#text" attributeName="text-buffer" to="56.7" />
-            </use>
-          </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-              <set href="#text" attributeName="text-buffer" to="accuracy" />
-            </use>
-            <use href="#dynamic-textarea" y="$" fill="red">
-              <set href="#text" attributeName="text-buffer" to="3" />
+            <use href="#dynamic-textarea" id="detail-panel__longitude" class="detail-panel__section-value">
+              <set href="#text" attributeName="text-buffer" to="-" />
+              <set href="#text" attributeName="text-length" to="16" />
             </use>
           </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-              <set href="#text" attributeName="text-buffer" to="altitude" />
+
+          <svg class="detail-panel__section">
+            <line class="detail-panel__section__hr" />
+            <use href="#dynamic-textarea" class="detail-panel__section-header">
+              <set href="#text" attributeName="text-buffer" to="Accuracy" />
             </use>
-            <use href="#dynamic-textarea" y="$" fill="red">
-              <set href="#text" attributeName="text-buffer" to="3" />
-            </use>
-          </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-              <set href="#text" attributeName="text-buffer" to="altitudeAccuracy" />
-            </use>
-            <use href="#dynamic-textarea" y="$" fill="red">
-              <set href="#text" attributeName="text-buffer" to="3" />
+            <use href="#dynamic-textarea" id="detail-panel__accuracy" class="detail-panel__section-value">
+              <set href="#text" attributeName="text-buffer" to="-" />
+              <set href="#text" attributeName="text-length" to="16" />
             </use>
           </svg>
-          <svg x="0" y="$" display="flexible-height">
-            <use href="#dynamic-textarea" y="0" fill="red">
-              <set href="#text" attributeName="text-buffer" to="heading" />
+          
+          <svg class="detail-panel__section">
+            <line class="detail-panel__section__hr" />
+            <use href="#dynamic-textarea" class="detail-panel__section-header">
+              <set href="#text" attributeName="text-buffer" to="Altitude" />
             </use>
-            <use href="#dynamic-textarea" y="$" fill="red">
-              <set href="#text" attributeName="text-buffer" to="3" />
+            <use href="#dynamic-textarea" id="detail-panel__altitude" class="detail-panel__section-value">
+              <set href="#text" attributeName="text-buffer" to="-" />
+              <set href="#text" attributeName="text-length" to="16" />
             </use>
           </svg>
+
+          <svg class="detail-panel__section">
+            <line class="detail-panel__section__hr" />
+            <use href="#dynamic-textarea" class="detail-panel__section-header">
+              <set href="#text" attributeName="text-buffer" to="Altitude accuracy" />
+            </use>
+            <use href="#dynamic-textarea" id="detail-panel__altitude-accuracy" class="detail-panel__section-value">
+              <set href="#text" attributeName="text-buffer" to="-" />
+              <set href="#text" attributeName="text-length" to="16" />
+            </use>
+          </svg>
+
+          <svg class="detail-panel__section">
+            <line class="detail-panel__section__hr" />
+            <use href="#dynamic-textarea" class="detail-panel__section-header">
+              <set href="#text" attributeName="text-buffer" to="Heading" />
+            </use>
+            <use href="#dynamic-textarea" id="detail-panel__heading" class="detail-panel__section-value">
+              <set href="#text" attributeName="text-buffer" to="-" />
+              <set href="#text" attributeName="text-length" to="16" />
+            </use>
+          </svg>
+
+          <svg class="detail-panel__section">
+            <line class="detail-panel__section__hr" />
+            <use href="#dynamic-textarea" class="detail-panel__section-header">
+              <set href="#text" attributeName="text-buffer" to="Speed" />
+            </use>
+            <use href="#dynamic-textarea" id="detail-panel__speed" class="detail-panel__section-value">
+              <set href="#text" attributeName="text-buffer" to="-" />
+              <set href="#text" attributeName="text-length" to="16" />
+            </use>
+          </svg>
+
+          <section class="detail-panel__section" height="25"/>
         </use>
       </use>
     </symbol>
