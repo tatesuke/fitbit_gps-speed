@@ -194,6 +194,6 @@
 .speed-panel.params__value {
   x: 10;
   y: $+6;
-  font-size: 34; line-increment: 42; font-step-size: 4; min-font-size: 24;
+  font-size: 34; line-increment: 35; font-step-size: 4; min-font-size: 24;
   fill: #555555;
 }

@@ -2,14 +2,14 @@
   <svg id="speed-panel__root" class="speed-panel l-root" pointer-events="visible">
     <section class="speed-panel l-gps-status">
       <section class="speed-panel gps-status">
-        <textarea id="speed-panel__status-label" class="speed-panel gps-status__status-label gps-element p2">GPS: Connecting...</textarea>
+        <textarea id="speed-panel__status-label" class="speed-panel gps-status__status-label gps-element p2" text-length="20">GPS: Connecting...</textarea>
       </section>
     </section>
     
     <section class="speed-panel l-speed">
       <section class="speed-panel speed">]
-        <text id="speed-panel__speed-label" class="speed-panel speed__speed-label gps-element" text-length="5">-</text>
-        <textarea id="speed-panel__speed-unit-label" class="speed-panel speed__unit-label">km/h</textarea>
+        <text id="speed-panel__speed-label" class="speed-panel speed__speed-label gps-element" text-length="8">-</text>
+        <textarea id="speed-panel__speed-unit-label" class="speed-panel speed__unit-label" text-length="4">km/h</textarea>
       </section>
     </section>
 
@@ -36,9 +36,9 @@
     <section class="speed-panel l-params">
       <section class="speed-panel params">
         <text class="speed-panel params__head">alt.</text>
-        <text id="speed-panel__alt-label" class="speed-panel params__value gps-element" text-length="5">-</text>
+        <text id="speed-panel__alt-label" class="speed-panel params__value gps-element" text-length="8">-</text>
         <text class="speed-panel params__head">head.</text>
-        <text id="speed-panel__head-label" class="speed-panel params__value gps-element" text-length="5">-</text>
+        <text id="speed-panel__head-label" class="speed-panel params__value gps-element" text-length="8">-</text>
       </section>
     </section>
     <rect x="0" y="0" width="100%" height="100%" opacity="0" />

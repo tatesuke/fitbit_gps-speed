@@ -78,8 +78,10 @@ export class SpeedPanel extends Panel {
   private updateUiForActive() {
     this.gpsStatusLabel.text = this.gpsStatusLabelText;
     this.speedUnitLabel.text = this.setting.unitOfSpeed;
-    this.headLabel.text = this.heading ? this.heading.toString() : "-";
-    this.altLabel.text = this.alt ? this.alt.toString().slice(0, 10) : "-";
+    this.headLabel.text = this.heading
+      ? this.heading.toString().slice(0, 7)
+      : "-";
+    this.altLabel.text = this.alt ? this.alt.toString().slice(0, 7) : "-";
 
     if (
       typeof this.speed === "number" &&
