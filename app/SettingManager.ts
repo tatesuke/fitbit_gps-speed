@@ -1,21 +1,44 @@
-import { defaultSetting, Setting } from "common/setting";
 import * as fs from "fs";
-import { listDirSync } from "fs";
+import { units } from "user-settings";
+
+export interface Setting {
+  version: number;
+  alwaysScreenOn: boolean;
+  unitOfSpeed: "km/h" | "mph" | "kt";
+  enablePhonesAssist: boolean;
+  showSpeedAsZeo: boolean;
+  showSpeedAsGray: boolean;
+  stopArrow: boolean;
+  showArrowAsGray: boolean;
+  minimumSpeed: number;
+}
+
+export const defaultSetting: Setting = {
+  version: 1,
+  alwaysScreenOn: false,
+  unitOfSpeed: units.speed === "us" ? "mph" : "km/h",
+  enablePhonesAssist: true,
+  showSpeedAsZeo: true,
+  showSpeedAsGray: true,
+  stopArrow: true,
+  showArrowAsGray: true,
+  minimumSpeed: 5,
+};
 
 class SettingManager {
-  private setting: Setting = defaultSetting;
+  private setting: Setting;
   private changeListeners: ((setting: Setting) => void)[] = [];
 
   public constructor() {
-    const listDir = listDirSync("/private/data");
-    let dirIter;
-    while ((dirIter = listDir.next()) && !dirIter.done) {
-      console.log(dirIter.value);
-    }
     if (!fs.existsSync("/private/data/setting.json")) {
+      this.setting = defaultSetting;
       fs.writeFileSync("/private/data/setting.json", this.setting, "json");
     } else {
       this.setting = fs.readFileSync("/private/data/setting.json", "json");
+      if (this.setting.version !== defaultSetting.version) {
+        this.setting = defaultSetting;
+        fs.writeFileSync("/private/data/setting.json", this.setting, "json");
+      }
     }
   }
 
@@ -36,3 +59,4 @@ class SettingManager {
 }
 
 export const settingManager = new SettingManager();
+

@@ -1,8 +1,7 @@
 import { Panel } from "app/component/Panel";
 import { OnOff } from "app/component/input/OnOff";
 import { Radio } from "app/component/input/Radio";
-import { settingManager } from "app/SettingManager";
-import { Setting } from "common/setting";
+import { settingManager, Setting } from "app/SettingManager";
 import { NumberPad } from "app/component/NumberPad";
 import { Label } from "app/component/input/Label";
 import { display } from "display";

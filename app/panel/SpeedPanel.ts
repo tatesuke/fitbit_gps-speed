@@ -1,7 +1,6 @@
 import * as util from "common/utils";
 import { Panel } from "app/component/Panel";
-import { Setting } from "common/setting";
-import { settingManager } from "app/SettingManager";
+import { settingManager, Setting } from "app/SettingManager";
 import { gpsManager } from "app/gpsManager";
 
 export class SpeedPanel extends Panel {
