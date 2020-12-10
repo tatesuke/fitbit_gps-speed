@@ -1,5 +1,5 @@
 import { Panel } from "app/component/Panel";
-import { gpsManager, Position } from "app/gpsManager";
+import { gpsManager, Position } from "app/GpsManager";
 
 export class DetailPanel extends Panel {
   private source: Element;

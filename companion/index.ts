@@ -51,7 +51,7 @@ function startGps() {
         },
       });
     },
-    { timeout: 5000 }
+    { timeout: 5000, enableHighAccuracy: true }
   );
 }
 

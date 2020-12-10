@@ -1,7 +1,7 @@
 import * as util from "common/utils";
 import { Panel } from "app/component/Panel";
 import { settingManager, Setting } from "app/SettingManager";
-import { gpsManager } from "app/gpsManager";
+import { gpsManager } from "app/GpsManager";
 
 export class SpeedPanel extends Panel {
   private gpsStatusLabel: Element;
@@ -83,16 +83,17 @@ export class SpeedPanel extends Panel {
       : "-";
     this.altLabel.text = this.alt ? this.alt.toString().slice(0, 7) : "-";
 
-    if (
-      typeof this.speed === "number" &&
-      this.setting.minimumSpeed <= this.speed
-    ) {
-      this.speedLabel.text = (this.setting.unitOfSpeed == "mph"
+    const displaySpeed =
+      this.setting.unitOfSpeed == "mph"
         ? this.speed * 2.2369
         : this.setting.unitOfSpeed == "kt"
         ? this.speed * 1.9438
-        : this.speed * 3.6
-      ).toFixed(1);
+        : this.speed * 3.6;
+    if (
+      typeof this.speed === "number" &&
+      this.setting.minimumSpeed < displaySpeed
+    ) {
+      this.speedLabel.text = displaySpeed.toFixed(1);
       (this
         .headArrow as GroupElement).groupTransform.rotate.angle = this.heading;
       util.removeClassName(this.gpsElements, "--gps-too-slow");
@@ -100,12 +101,7 @@ export class SpeedPanel extends Panel {
       if (this.setting.showSpeedAsZeo) {
         this.speedLabel.text = "0";
       } else {
-        this.speedLabel.text = (this.setting.unitOfSpeed == "mph"
-              ? this.speed * 2.2369
-              : this.setting.unitOfSpeed == "kt"
-              ? this.speed * 1.9438
-              : this.speed * 3.6
-            ).toFixed(1);
+        this.speedLabel.text = displaySpeed.toFixed(1);
       }
       if (this.setting.showSpeedAsGray) {
         util.addClassName(this.speedLabel, "--gps-too-slow");
