@@ -58,6 +58,7 @@
         <rect x="0" y="0" width="100%" height="100%" opacity="0" id="number-pad__button-3" pointer-events="visible" />
       </section>
       <section x="75%" y="67%" width="25%" height="33%">
+         <rect class="number-pad__button-ok"/>
         <text class="number-pad__number number-pad__ok">OK</text>
         <rect x="0" y="0" width="100%" height="100%" opacity="0" id="number-pad__button-ok" pointer-events="visible" />
       </section>
