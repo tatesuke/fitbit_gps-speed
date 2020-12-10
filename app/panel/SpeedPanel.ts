@@ -81,7 +81,14 @@ export class SpeedPanel extends Panel {
     this.headLabel.text = this.heading
       ? this.heading.toString().slice(0, 7)
       : "-";
-    this.altLabel.text = this.alt ? this.alt.toString().slice(0, 7) : "-";
+
+    if (this.alt) {
+      const alt =
+        this.setting.unitOfAltitude === "m" ? this.alt : this.alt * 3.28;
+      this.altLabel.text = alt.toString().slice(0, 7);
+    } else {
+      this.altLabel.text = "-";
+    }
 
     const displaySpeed =
       this.setting.unitOfSpeed == "mph"

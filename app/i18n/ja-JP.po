@@ -1,5 +1,5 @@
 msgid "detail-panel__title"
-msgstr "Parameters"
+msgstr "詳細"
 
 msgid "detail-panel__source"
 msgstr "ソース"
@@ -17,7 +17,7 @@ msgid "detail-panel__accuracy"
 msgstr "精度"
 
 msgid "detail-panel__altitude"
-msgstr "高度（楕円体高）"
+msgstr "高度（楕円体高）[m]"
 
 msgid "detail-panel__altitude-accuracy"
 msgstr "精度（高度）"
@@ -26,7 +26,7 @@ msgid "detail-panel__heading"
 msgstr "進行方向"
 
 msgid "detail-panel__speed"
-msgstr "スピード"
+msgstr "スピード[m/s]"
 
 msgid "setting-panel__basic-setting"
 msgstr "基本設定"
@@ -39,6 +39,9 @@ msgstr "スマホのGPSを併用"
 
 msgid "setting-panel__unit-of-speed"
 msgstr "速度の単位"
+
+msgid "setting-panel__unit-of-altitude"
+msgstr "高度の単位"
 
 msgid "setting-panel__setting-for-slow-speed"
 msgstr "低速時の設定"

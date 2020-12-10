@@ -9,6 +9,7 @@ import { display } from "display";
 export class SettingPanel extends Panel {
   private alwaysScreenOn: OnOff;
   private unitOfSpeed: Radio;
+  private unitOfAltitude: Radio;
   private eablePhonesAssist: OnOff;
   private minimumSpeed: Label;
   private showAsSpeed0: OnOff;
@@ -16,7 +17,6 @@ export class SettingPanel extends Panel {
   private stopUpdateAnArrow: OnOff;
   private grayoutAnArrow: OnOff;
   private displayOnIntervalId: number | null = null;
-
 
   constructor(elem: Element) {
     super(elem.getElementsByClassName("id_scrollview")[0]);
@@ -57,6 +57,19 @@ export class SettingPanel extends Panel {
     this.unitOfSpeed.onClick((value: string) => {
       settingManager.update({
         unitOfSpeed: value,
+      });
+    });
+
+    this.unitOfAltitude = new Radio(
+      [
+        ["m", elem.getElementById("setting-panel__m-radio")],
+        ["feet", elem.getElementById("setting-panel__feet-radio")],
+      ],
+      setting.unitOfAltitude
+    );
+    this.unitOfAltitude.onClick((value: string) => {
+      settingManager.update({
+        unitOfAltitude: value,
       });
     });
 
@@ -118,6 +131,7 @@ export class SettingPanel extends Panel {
   private onSettingChange(setting: Setting) {
     this.alwaysScreenOn.setValue(setting.alwaysScreenOn);
     this.unitOfSpeed.setValue(setting.unitOfSpeed);
+    this.unitOfAltitude.setValue(setting.unitOfAltitude);
     this.eablePhonesAssist.setValue(setting.enablePhonesAssist);
     this.minimumSpeed.setValue(setting.minimumSpeed);
     this.showAsSpeed0.setValue(setting.showSpeedAsZeo);
@@ -128,7 +142,9 @@ export class SettingPanel extends Panel {
     if (setting.alwaysScreenOn) {
       if (this.displayOnIntervalId === null) {
         display.poke();
-        this.displayOnIntervalId = setInterval(()=>{display.poke()}, 5000);
+        this.displayOnIntervalId = setInterval(() => {
+          display.poke();
+        }, 5000);
       }
     } else {
       if (this.displayOnIntervalId !== null) {

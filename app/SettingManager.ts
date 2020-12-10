@@ -5,6 +5,7 @@ export interface Setting {
   version: number;
   alwaysScreenOn: boolean;
   unitOfSpeed: "km/h" | "mph" | "kt";
+  unitOfAltitude: "m" | "feet";
   enablePhonesAssist: boolean;
   showSpeedAsZeo: boolean;
   showSpeedAsGray: boolean;
@@ -14,11 +15,12 @@ export interface Setting {
 }
 
 export const defaultSetting: Setting = {
-  version: 1,
+  version: 2,
   alwaysScreenOn: false,
   unitOfSpeed: units.speed === "us" ? "mph" : "km/h",
+  unitOfAltitude: units.speed === "us" ? "feet" : "m",
   enablePhonesAssist: true,
-  showSpeedAsZeo: true,
+  showSpeedAsZeo: false,
   showSpeedAsGray: true,
   stopArrow: true,
   showArrowAsGray: true,

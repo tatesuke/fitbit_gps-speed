@@ -1,5 +1,5 @@
 msgid "detail-panel__title"
-msgstr "Parameters"
+msgstr "Detail"
 
 msgid "detail-panel__source"
 msgstr "Source"
@@ -17,7 +17,7 @@ msgid "detail-panel__accuracy"
 msgstr "Accuracy"
 
 msgid "detail-panel__altitude"
-msgstr "Altitude"
+msgstr "Altitude (Elliptical height) [m]"
 
 msgid "detail-panel__altitude-accuracy"
 msgstr "Altitude accuracy"
@@ -26,7 +26,7 @@ msgid "detail-panel__heading"
 msgstr "Heading"
 
 msgid "detail-panel__speed"
-msgstr "Speed"
+msgstr "Speed [m/s]"
 
 msgid "setting-panel__basic-setting"
 msgstr "Basic setting"
@@ -39,6 +39,9 @@ msgstr "Enable phone's assist"
 
 msgid "setting-panel__unit-of-speed"
 msgstr "Unit of speed"
+
+msgid "setting-panel__unit-of-altitude"
+msgstr "Unit of altitude"
 
 msgid "setting-panel__setting-for-slow-speed"
 msgstr "Setting for slow speed"

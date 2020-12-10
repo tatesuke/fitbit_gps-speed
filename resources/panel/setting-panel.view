@@ -49,6 +49,19 @@
             </use>
           </svg>
 
+          <svg class="setting-panel__section">
+            <line class="setting-section__hr" />
+            <use href="#dynamic-textarea" class="setting-section__section-header">
+              <set href="#text" attributeName="text-buffer" to="_setting-panel__unit-of-altitude" />
+            </use>
+            <use href="#radio" id="setting-panel__m-radio">
+              <set href="#text" attributeName="text-buffer" to="m" />
+            </use>
+            <use href="#radio" id="setting-panel__feet-radio">
+              <set href="#text" attributeName="text-buffer" to="feet" />
+            </use>
+          </svg>
+
 
           <svg class="setting-panel__title-section">
             <text class="setting-panel__title-title__text">_setting-panel__setting-for-slow-speed</text>
