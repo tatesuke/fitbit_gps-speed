@@ -2,58 +2,58 @@ msgid "detail-panel__title"
 msgstr "Parameters"
 
 msgid "detail-panel__source"
-msgstr "Source"
+msgstr "ソース"
 
 msgid "detail-panel__last-update-time"
-msgstr "Last update time"
+msgstr "最終更新"
 
 msgid "detail-panel__latitude"
-msgstr "Latitude"
+msgstr "緯度"
 
 msgid "detail-panel__longitude"
-msgstr "Longitude"
+msgstr "経度"
 
 msgid "detail-panel__accuracy"
-msgstr "Accuracy"
+msgstr "精度"
 
 msgid "detail-panel__altitude"
-msgstr "Altitude"
+msgstr "高度（楕円体高）"
 
 msgid "detail-panel__altitude-accuracy"
-msgstr "Altitude accuracy"
+msgstr "精度（高度）"
 
 msgid "detail-panel__heading"
-msgstr "Heading"
+msgstr "進行方向"
 
 msgid "detail-panel__speed"
-msgstr "Speed"
+msgstr "スピード"
 
 msgid "setting-panel__basic-setting"
-msgstr "Basic setting"
+msgstr "基本設定"
 
 msgid "setting-panel__always-screen-on"
-msgstr "Always Screen On"
+msgstr "常にディスプレイをON"
 
 msgid "setting-panel__enable-phones-assist"
-msgstr "Enable phone's assist"
+msgstr "スマホのGPSを併用"
 
 msgid "setting-panel__unit-of-speed"
-msgstr "Unit of speed"
+msgstr "速度の単位"
 
 msgid "setting-panel__setting-for-slow-speed"
-msgstr "Setting for slow speed"
+msgstr "低速時の設定"
 
 msgid "setting-panel__minimum-speed"
-msgstr "Minimum speed"
+msgstr "最低速度"
 
 msgid "setting-panel__show-as-speed-0"
-msgstr "Show as speed 0"
+msgstr "スピードを0と表示"
 
 msgid "setting-panel__gray-out-a-speed"
-msgstr "Gray out a speed"
+msgstr "スピードをグレーアウト"
 
 msgid "setting-panel__stop-update-an-arrow"
-msgstr "Stop update an arrow"
+msgstr "矢印を更新しない"
 
 msgid "setting-panel__gray-out-an-arrow"
-msgstr "Gray out an arrow"
+msgstr "矢印をグレーアウト"

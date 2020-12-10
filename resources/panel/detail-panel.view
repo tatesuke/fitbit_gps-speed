@@ -5,13 +5,13 @@
         <use href="#scrollview-item" display="flexible-height">
           
           <svg class="detail-panel__title-section">
-            <text class="detail-panel__title-title__text">Parameters</text>
+            <text class="detail-panel__title-title__text">_detail-panel__title</text>
           </svg>
           
           <svg class="detail-panel__section">
             <line class="detail-panel__section__hr" />
             <use href="#dynamic-textarea" class="detail-panel__section-header">
-              <set href="#text" attributeName="text-buffer" to="Source" />
+              <set href="#text" attributeName="text-buffer" to="_detail-panel__source" />
             </use>
             <use href="#dynamic-textarea" id="detail-panel__source" class="detail-panel__section-value">
               <set href="#text" attributeName="text-buffer" to="-" />
@@ -22,7 +22,7 @@
           <svg class="detail-panel__section">
             <line class="detail-panel__section__hr" />
             <use href="#dynamic-textarea" class="detail-panel__section-header">
-              <set href="#text" attributeName="text-buffer" to="Last update time" />
+              <set href="#text" attributeName="text-buffer" to="_detail-panel__last-update-time" />
             </use>
             <use href="#dynamic-textarea" id="detail-panel__last-update-time" class="detail-panel__section-value">
               <set href="#text" attributeName="text-buffer" to="-" />
@@ -33,7 +33,7 @@
           <svg class="detail-panel__section">
             <line class="detail-panel__section__hr" />
             <use href="#dynamic-textarea" class="detail-panel__section-header">
-              <set href="#text" attributeName="text-buffer" to="Latitude" />
+              <set href="#text" attributeName="text-buffer" to="_detail-panel__latitude" />
             </use>
             <use href="#dynamic-textarea" id="detail-panel__latitude" class="detail-panel__section-value">
               <set href="#text" attributeName="text-buffer" to="-" />
@@ -44,7 +44,7 @@
           <svg class="detail-panel__section">
             <line class="detail-panel__section__hr" />
             <use href="#dynamic-textarea" class="detail-panel__section-header">
-              <set href="#text" attributeName="text-buffer" to="Longitude" />
+              <set href="#text" attributeName="text-buffer" to="_detail-panel__longitude" />
             </use>
             <use href="#dynamic-textarea" id="detail-panel__longitude" class="detail-panel__section-value">
               <set href="#text" attributeName="text-buffer" to="-" />
@@ -55,7 +55,7 @@
           <svg class="detail-panel__section">
             <line class="detail-panel__section__hr" />
             <use href="#dynamic-textarea" class="detail-panel__section-header">
-              <set href="#text" attributeName="text-buffer" to="Accuracy" />
+              <set href="#text" attributeName="text-buffer" to="_detail-panel__accuracy" />
             </use>
             <use href="#dynamic-textarea" id="detail-panel__accuracy" class="detail-panel__section-value">
               <set href="#text" attributeName="text-buffer" to="-" />
@@ -66,7 +66,7 @@
           <svg class="detail-panel__section">
             <line class="detail-panel__section__hr" />
             <use href="#dynamic-textarea" class="detail-panel__section-header">
-              <set href="#text" attributeName="text-buffer" to="Altitude" />
+              <set href="#text" attributeName="text-buffer" to="_detail-panel__altitude" />
             </use>
             <use href="#dynamic-textarea" id="detail-panel__altitude" class="detail-panel__section-value">
               <set href="#text" attributeName="text-buffer" to="-" />
@@ -77,7 +77,7 @@
           <svg class="detail-panel__section">
             <line class="detail-panel__section__hr" />
             <use href="#dynamic-textarea" class="detail-panel__section-header">
-              <set href="#text" attributeName="text-buffer" to="Altitude accuracy" />
+              <set href="#text" attributeName="text-buffer" to="_detail-panel__altitude-accuracy" />
             </use>
             <use href="#dynamic-textarea" id="detail-panel__altitude-accuracy" class="detail-panel__section-value">
               <set href="#text" attributeName="text-buffer" to="-" />
@@ -88,7 +88,7 @@
           <svg class="detail-panel__section">
             <line class="detail-panel__section__hr" />
             <use href="#dynamic-textarea" class="detail-panel__section-header">
-              <set href="#text" attributeName="text-buffer" to="Heading" />
+              <set href="#text" attributeName="text-buffer" to="_detail-panel__heading" />
             </use>
             <use href="#dynamic-textarea" id="detail-panel__heading" class="detail-panel__section-value">
               <set href="#text" attributeName="text-buffer" to="-" />
@@ -99,7 +99,7 @@
           <svg class="detail-panel__section">
             <line class="detail-panel__section__hr" />
             <use href="#dynamic-textarea" class="detail-panel__section-header">
-              <set href="#text" attributeName="text-buffer" to="Speed" />
+              <set href="#text" attributeName="text-buffer" to="_detail-panel__speed" />
             </use>
             <use href="#dynamic-textarea" id="detail-panel__speed" class="detail-panel__section-value">
               <set href="#text" attributeName="text-buffer" to="-" />

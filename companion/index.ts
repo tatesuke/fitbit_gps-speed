@@ -1,8 +1,7 @@
 import * as messaging from "messaging";
-import { geolocation, PositionOptions, PositionError } from "geolocation";
+import { geolocation } from "geolocation";
 
 messaging.peerSocket.addEventListener("message", (e) => {
-  console.log("受信!  " + e.data.key);
   if (!e.data || !e.data.action || !e.data.action.type) {
     return;
   }
@@ -57,14 +56,12 @@ function startGps() {
 }
 
 function stopGps() {
-  console.log("clearwatch");
   geolocation.clearWatch(gpsWatchId);
   gpsWatchId = -1;
 }
 
 const sendQueue: any[] = [];
 function send(data) {
-  console.log("send");
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     messaging.peerSocket.send(data);
   } else {
