@@ -1,4 +1,5 @@
 export interface Setting {
+  version: number;
   alwaysScreenOn: boolean;
   unitOfSpeed: "km/h" | "mph" | "kt";
   enablePhonesAssist: boolean;
@@ -10,6 +11,7 @@ export interface Setting {
 }
 
 export const defaultSetting: Setting = {
+  version: 1,
   alwaysScreenOn: false,
   unitOfSpeed: "km/h",
   enablePhonesAssist: true,

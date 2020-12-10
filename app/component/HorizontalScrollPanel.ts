@@ -1,4 +1,4 @@
-import { Panel } from "./Panel";
+import { Panel } from "app/component/Panel";
 
 const SCROLL_START_DISTANCE = 15;
 const WIDTH = 336;

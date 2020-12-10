@@ -3,12 +3,11 @@
  */
 
 import document from 'document';
-import { ClockPanel } from "./component/ClockPanel";
-import { HorizontalScrollPanel } from "./component/HorizontalScrollPanel";
-import { Panel } from "./component/Panel";
-import { SpeedPanel } from "./panel/SpeedPanel";
-import { SettingPanel } from "./panel/SettingPanel";
-import { DetailPanel } from "./panel/DetailPanel";
+import { ClockPanel } from "app/component/ClockPanel";
+import { HorizontalScrollPanel } from "app/component/HorizontalScrollPanel";
+import { SpeedPanel } from "app/panel/SpeedPanel";
+import { SettingPanel } from "app/panel/SettingPanel";
+import { DetailPanel } from "app/panel/DetailPanel";
 
 const clockPanel = new ClockPanel(document.getElementById("clock-panel"));
 

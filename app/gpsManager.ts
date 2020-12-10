@@ -1,5 +1,5 @@
 import { geolocation, PositionError } from "geolocation";
-import { settingManager } from "./SettingManager";
+import { settingManager } from "app/SettingManager";
 import * as messaging from "messaging";
 
 interface Coordinates {
@@ -50,6 +50,13 @@ class GpsManager {
         this.watchSuccessPhone(e.data.action.payload);
       } else {
         this.watchFailPhone(e.data.action.payload);
+      }
+    });
+    settingManager.addChangeListener((setting) => {
+      if (setting.enablePhonesAssist) {
+        this.startPhoneGps();
+      } else {
+        this.stopPhoneGps();
       }
     });
   }
@@ -151,4 +158,5 @@ class GpsManager {
     }
   }
 }
-export const gpsManager = new GpsManager();
+const temp = new GpsManager();
+export const gpsManager = temp;

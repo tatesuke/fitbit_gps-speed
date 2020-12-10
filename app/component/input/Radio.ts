@@ -1,4 +1,4 @@
-import * as util from "../../../common/utils";
+import * as util from "common/utils";
 import { vibration } from "haptics";
 
 export class Radio {

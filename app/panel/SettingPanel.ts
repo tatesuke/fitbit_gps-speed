@@ -1,10 +1,10 @@
-import { Panel } from "../component/Panel";
-import { OnOff } from "../component/input/OnOff";
-import { Radio } from "../component/input/Radio";
-import { settingManager } from "../settingManager";
-import { Setting } from "../../common/setting";
-import { NumberPad } from "../component/NumberPad";
-import { Label } from "../component/input/Label";
+import { Panel } from "app/component/Panel";
+import { OnOff } from "app/component/input/OnOff";
+import { Radio } from "app/component/input/Radio";
+import { settingManager } from "app/SettingManager";
+import { Setting } from "common/setting";
+import { NumberPad } from "app/component/NumberPad";
+import { Label } from "app/component/input/Label";
 import { display } from "display";
 
 export class SettingPanel extends Panel {

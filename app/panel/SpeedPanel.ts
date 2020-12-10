@@ -1,10 +1,8 @@
-import * as util from "../../common/utils";
-import { Panel } from "../component/Panel";
-import { Setting } from "../../common/setting";
-import { settingManager } from "../settingManager";
-import { gpsManager } from "../gpsManager";
-
-const MIN_SPEED = 0.0;
+import * as util from "common/utils";
+import { Panel } from "app/component/Panel";
+import { Setting } from "common/setting";
+import { settingManager } from "app/SettingManager";
+import { gpsManager } from "app/gpsManager";
 
 export class SpeedPanel extends Panel {
   private gpsStatusLabel: Element;
@@ -84,17 +82,41 @@ export class SpeedPanel extends Panel {
     this.headLabel.text = this.heading ? this.heading.toString() : "-";
     this.altLabel.text = this.alt ? this.alt.toString().slice(0, 10) : "-";
 
-    if (typeof this.speed === "number" && MIN_SPEED <= this.speed) {
+    if (
+      typeof this.speed === "number" &&
+      this.setting.minimumSpeed <= this.speed
+    ) {
       this.speedLabel.text = (this.setting.unitOfSpeed == "mph"
         ? this.speed * 2.2369
+        : this.setting.unitOfSpeed == "kt"
+        ? this.speed * 1.9438
         : this.speed * 3.6
       ).toFixed(1);
       (this
         .headArrow as GroupElement).groupTransform.rotate.angle = this.heading;
       util.removeClassName(this.gpsElements, "--gps-too-slow");
     } else {
-      this.speedLabel.text = "0";
-      util.addClassName(this.gpsElements, "--gps-too-slow");
+      if (this.setting.showSpeedAsZeo) {
+        this.speedLabel.text = "0";
+      } else {
+        this.speedLabel.text = (this.setting.unitOfSpeed == "mph"
+              ? this.speed * 2.2369
+              : this.setting.unitOfSpeed == "kt"
+              ? this.speed * 1.9438
+              : this.speed * 3.6
+            ).toFixed(1);
+      }
+      if (this.setting.showSpeedAsGray) {
+        util.addClassName(this.speedLabel, "--gps-too-slow");
+      }
+
+      if (!this.setting.stopArrow) {
+        (this
+          .headArrow as GroupElement).groupTransform.rotate.angle = this.heading;
+      }
+      if (this.setting.showArrowAsGray) {
+        util.addClassName(this.headArrow.children, "--gps-too-slow");
+      }
     }
     util.addClassName(this.gpsElements, "--gps-active");
   }

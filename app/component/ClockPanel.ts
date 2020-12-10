@@ -1,6 +1,6 @@
 import document from "document";
 import clock from "clock";
-import * as util from "../../common/utils";
+import * as util from "common/utils";
 import { preferences } from "user-settings";
 import { Panel } from "./Panel";
 

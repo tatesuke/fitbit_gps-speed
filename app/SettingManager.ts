@@ -1,4 +1,4 @@
-import { defaultSetting, Setting } from "../common/setting";
+import { defaultSetting, Setting } from "common/setting";
 import * as fs from "fs";
 import { listDirSync } from "fs";
 
@@ -6,7 +6,7 @@ class SettingManager {
   private setting: Setting = defaultSetting;
   private changeListeners: ((setting: Setting) => void)[] = [];
 
-  constructor() {
+  public constructor() {
     const listDir = listDirSync("/private/data");
     let dirIter;
     while ((dirIter = listDir.next()) && !dirIter.done) {

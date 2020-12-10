@@ -16,7 +16,7 @@ messaging.peerSocket.addEventListener("message", (e) => {
 
 let gpsWatchId: number = -1;
 function startGps() {
-  if (!geolocation) {
+  if (!geolocation || gpsWatchId !== -1) {
     return;
   }
   gpsWatchId = geolocation.watchPosition(
@@ -59,6 +59,7 @@ function startGps() {
 function stopGps() {
   console.log("clearwatch");
   geolocation.clearWatch(gpsWatchId);
+  gpsWatchId = -1;
 }
 
 const sendQueue: any[] = [];
