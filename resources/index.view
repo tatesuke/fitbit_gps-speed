@@ -3,100 +3,21 @@
     <use href="#clock-panel" id="clock-panel"/>
   </section>
   
-  <svg x="0" y="$" width="100%" height="100%-50">
-    <g id="horizontal-scroll-panel">
-      <use x="0" href="#speed-panel" id="speed-panel" />
-      <use x="100%" href="#detail-panel" id="detail-panel"/>
-      <use x="200%" href="#setting-panel" id="setting-panel1"/>
+  <svg x="0" y="$" width="100%" height="100%-50" id="horizontal-scroll-panel">
+    <g id="horizontal-scroll-panel__g">
+      <use x="0" height="100%-10" href="#speed-panel" id="speed-panel" />
+      <use x="100%" height="100%-10" href="#detail-panel" id="detail-panel"/>
+      <use x="200%" height="100%-10" href="#setting-panel" id="setting-panel1"/>
     </g>
+    <section x="0" y="100%-10" width="100%" height="10">
+      <circle id="horizontal-scroll-panel__indicator-0" class="horizontal-scroll-panel__indicator" cx="50%-15" cy="30%" />
+      <circle id="horizontal-scroll-panel__indicator-1" class="horizontal-scroll-panel__indicator" cx="50%" cy="30%" />
+      <circle id="horizontal-scroll-panel__indicator-2" class="horizontal-scroll-panel__indicator" cx="50%+15" cy="30%" />
+    </section>
   </svg>
 
   <section x="0" y="0" width="100%" height="100%">
     <use href="#number-pad" />
   </section>
-  
-
-  <!-- <svg y="$" display="flexible-height">
-    <use href="#dynamic-textarea" y="0" fill="red">
-      <set href="#text" attributeName="text-buffer" to="Always display on" />
-    </use>
-    <svg y="$" height="60">
-      <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
-      <text y="50%+10" fill="white">OFF</text>
-      <svg x="100%-74" y="50%-21" width="72" height="42">
-        <arc x="1" y="1" width="40" height="40" fill="fb-light-gray" arc-width="2" start-angle="180" sweep-angle="180" />
-        <line x1="21" y1="1" x2="100%-21" y2="1" fill="fb-light-gray" stroke-linecap="butt" stroke-width="2"/>
-        <line x1="21" y1="100%-2" x2="100%-21" y2="100%-2" fill="fb-light-gray" stroke-linecap="butt" stroke-width="2"/>
-        <arc x="100%-41" y="1" width="40" height="40" fill="fb-light-gray" arc-width="2" start-angle="0" sweep-angle="180" />
-
-        <circle cx="22" cy="50%" r="13" fill="fb-light-gray" />
-        <circle cx="100%-22" cy="50%" r="13" fill="fb-cyan" />
-      </svg>
-    </svg>
-  </svg> -->
-
-  <!-- <svg y="$" display="flexible-height">
-    <use href="#dynamic-textarea" y="0" fill="red">
-      <set href="#text" attributeName="text-buffer" to="Unit of Speed" />
-    </use>
-    <svg y="$" display="flexible-height">
-      <svg width="100%" height="60">
-        <svg y="9" width="42" height="42">
-          <arc x="1" y="1" width="40" height="40" fill="fb-light-gray" arc-width="2" start-angle="0" sweep-angle="360" />
-          <circle cx="50%" cy="50%" r="13" fill="fb-cyan" />
-        </svg>
-        <text y="50%+10" x="$+5" fill="white">km/h</text>
-      </svg>
-      <svg y="$" width="100%" height="60">
-        <svg y="9" width="42" height="42">
-          <arc x="1" y="1" width="40" height="40" fill="fb-light-gray" arc-width="2" start-angle="0" sweep-angle="360" />
-          <circle cx="50%" cy="50%" r="13" fill="fb-cyan" />
-        </svg>
-        <text y="50%+10" x="$+5" fill="white">mph</text>
-      </svg>
-      <svg y="$" width="100%" height="60">
-        <svg y="9" width="42" height="42">
-          <arc x="1" y="1" width="40" height="40" fill="fb-light-gray" arc-width="2" start-angle="0" sweep-angle="360" />
-          <circle cx="50%" cy="50%" r="13" fill="fb-cyan" />
-        </svg>
-        <text y="50%+10" x="$+5" fill="white">kn</text>
-      </svg>
-    </svg>
-    <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
-  </svg> -->
-
-  <!-- <svg y="$" height="50">
-    <text fill="red">Setting for slow speed</text>
-    <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
-  </svg>
-  <svg y="$" display="flexible-height">
-    <use href="#dynamic-textarea" y="0" fill="red">
-      <set href="#text" attributeName="text-buffer" to="Show speed as 0" />
-    </use>
-    <svg y="$" height="60">
-      <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
-      <text y="50%+10" fill="white">OFF</text>
-      <svg x="100%-74" y="50%-21" width="72" height="42">
-        <arc x="1" y="1" width="40" height="40" fill="fb-light-gray" arc-width="2" start-angle="180" sweep-angle="180" />
-        <line x1="21" y1="1" x2="100%-21" y2="1" fill="fb-light-gray" stroke-linecap="butt" stroke-width="2"/>
-        <line x1="21" y1="100%-2" x2="100%-21" y2="100%-2" fill="fb-light-gray" stroke-linecap="butt" stroke-width="2"/>
-        <arc x="100%-41" y="1" width="40" height="40" fill="fb-light-gray" arc-width="2" start-angle="0" sweep-angle="180" />
-
-        <circle cx="22" cy="50%" r="13" fill="fb-light-gray" />
-        <circle cx="100%-22" cy="50%" r="13" fill="fb-cyan" />
-      </svg>
-    </svg>
-  </svg>
-  <svg y="$" display="flexible-height">
-    <use href="#dynamic-textarea" y="0" fill="red">
-      <set href="#text" attributeName="text-buffer" to="Minimum speed" />
-    </use>
-    <svg y="$" height="60">
-      <line x1="0" y1="100%" x2="100%" y2="100%" fill="blue"/>
-      <text y="50%+10" fill="white">5</text>
-      
-      <text x="100%-16" text-anchor="end" fill="white">></text>
-    </svg>
-  </svg> -->
 
 </svg>

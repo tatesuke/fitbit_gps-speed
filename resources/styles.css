@@ -1,0 +1,8 @@
+.horizontal-scroll-panel__indicator {
+    r: 2;
+    fill: fb-light-gray;
+}
+.horizontal-scroll-panel__indicator--active {
+    r: 5;
+    fill: white;
+}

@@ -1,4 +1,5 @@
 import { Panel } from "app/component/Panel";
+import * as util from "common/utils";
 
 const SCROLL_START_DISTANCE = 15;
 const WIDTH = 336;
@@ -11,10 +12,23 @@ export class HorizontalScrollPanel {
 
   private startX: number;
   private isScrolling: boolean = false;
+  private indicators: GraphicsElement[] = [];
 
-  constructor(gElem: Element, panels: Panel[]) {
-    this.gElem = gElem as GroupElement;
+  constructor(elem: Element, panels: Panel[]) {
+    this.gElem = elem.getElementById(
+      
+      "horizontal-scroll-panel__g"
+    
+    ) as GroupElement;
     this.panels = panels;
+
+    for (let i = 0; i < panels.length; i++) {
+      this.indicators.push(
+        elem.getElementById(
+          "horizontal-scroll-panel__indicator-" + i
+        ) as GraphicsElement
+      );
+    }
 
     panels.forEach((panel) => {
       panel.onMouseDown((e) => this.start(e));
@@ -22,6 +36,8 @@ export class HorizontalScrollPanel {
       panel.onMouseOut((e) => this.stop(e));
       panel.onMouseMove((e) => this.onMouseMove(e));
     });
+
+    this.scrollTo(0);
   }
   private start(e: MouseEvent) {
     this.startX = e.screenX;
@@ -70,5 +86,16 @@ export class HorizontalScrollPanel {
     }
     this.currentPagenumber = pageNumber;
     this.gElem.groupTransform.translate.x = -this.currentPagenumber * WIDTH;
+
+    this.indicators.forEach((elem, i) => {
+      if (i === pageNumber) {
+        util.addClassName(elem, "horizontal-scroll-panel__indicator--active");
+      } else {
+        util.removeClassName(
+          elem,
+          "horizontal-scroll-panel__indicator--active"
+        );
+      }
+    });
   }
 }
