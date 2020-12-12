@@ -144,7 +144,7 @@ export class SettingPanel extends Panel {
         display.poke();
         this.displayOnIntervalId = setInterval(() => {
           display.poke();
-        }, 5000);
+        }, 3000);
       }
     } else {
       if (this.displayOnIntervalId !== null) {
