@@ -96,14 +96,17 @@ export class SpeedPanel extends Panel {
         : this.setting.unitOfSpeed == "kt"
         ? this.speed * 1.9438
         : this.speed * 3.6;
-    if (
+
+    const tooSlow =
       typeof this.speed === "number" &&
-      this.setting.minimumSpeed < displaySpeed
-    ) {
+      this.setting.minimumSpeed > displaySpeed;
+    if (!tooSlow) {
       this.speedLabel.text = displaySpeed.toFixed(1);
-      (this
-        .headArrow as GroupElement).groupTransform.rotate.angle = this.heading;
-      util.removeClassName(this.gpsElements, "--gps-too-slow");
+      if (typeof this.heading === "number") {
+        (this
+          .headArrow as GroupElement).groupTransform.rotate.angle = this.heading;
+        util.removeClassName(this.gpsElements, "--gps-too-slow");
+      }
     } else {
       if (this.setting.showSpeedAsZeo) {
         this.speedLabel.text = "0";
@@ -119,7 +122,10 @@ export class SpeedPanel extends Panel {
           .headArrow as GroupElement).groupTransform.rotate.angle = this.heading;
       }
       if (this.setting.showArrowAsGray) {
-        util.addClassName(this.headArrow.children, "--gps-too-slow");
+        util.addClassName(
+          this.headArrow.getElementsByClassName("gps-element"),
+          "--gps-too-slow"
+        );
       }
     }
     util.addClassName(this.gpsElements, "--gps-active");
